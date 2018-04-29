@@ -1,0 +1,19 @@
+{
+  "fitbit": {
+    "appUUID": "6d2d7990-08c9-4b06-992f-8667604edf58",
+    "appType": "app",
+    "appDisplayName": "Pointy",
+    "iconFile": "resources/icon.png",
+    "wipeColor": "#8bc34a",
+    "requestedPermissions": [],
+    "buildTargets": [
+      "higgs",
+      "meson"
+    ],
+    "i18n": {
+      "en": {
+        "name": "Pointy"
+      }
+    }
+  }
+}

@@ -1,0 +1,9 @@
+[{
+	"courseID": 1,
+	"courseName": "Flat Rockers",
+	"path": "./resources/courses/flat-rocks/flat-rocks.json"
+}, {
+	"courseID": 2,
+	"courseName": "Eagle's Nest",
+	"path": "./resources/courses/eagles-nest/eagles-nest.json"
+}]

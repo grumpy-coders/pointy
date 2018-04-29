@@ -1,0 +1,29 @@
+<svg>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="/mnt/sysassets/widgets/dynamic_textarea.css"/>
+  <link rel="import" href="/mnt/sysassets/widgets/dynamic_textarea.gui"/>
+  <link rel="import" href="/mnt/sysassets/widgets/mixed_text_widget.gui"/>
+  
+  <defs>
+    <symbol id="player" width="100%" class="player">
+      
+      <use id="name" href="#mixed-text-left-mid" width="100%" fill="fb-white">
+<!--         <set href="#header" attributeName="pointer-events" to="all"/> -->
+        <set href="#header/text" attributeName="text-buffer" to="Player 1"/>
+        <set href="#copy/text" attributeName="text-buffer" to=""/>
+      </use>
+      
+      <use id="score" href="#mixed-text-center-mid" width="100%" fill="fb-white">
+        <set href="#header/text" attributeName="text-buffer" to="0"/>
+        <set href="#copy/text" attributeName="text-buffer" to=""/>
+      </use>
+      
+      <text id="totalScore" x="10" y="95" width="100%" fill="fb-white" font-size="20">Total: 000</text>      
+      <image id="btnUp" pointer-events="all" x="100%-59" y="3" height="53" width="56" href="graphics\up-purple.png" load="sync" />
+      <image id="btnDown" pointer-events="all" x="100%-59" y="58" height="53" width="56" href="graphics\down-purple.png" load="sync" />
+      <line id="bottomLine" x1="0" y1="$+3" x2="120%" y2="$+3" fill="red" stroke-width="1" /> 
+      <text id="playerIndex" x="0" y="0" height="0" width="0" display="none"/>
+      
+    </symbol>
+  </defs>
+</svg>

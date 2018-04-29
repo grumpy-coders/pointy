@@ -1,0 +1,48 @@
+<svg>
+	<link rel="stylesheet" href="styles.css" />
+  <link rel="import" href="../widgets/course-attribute.gui" />
+  <defs>
+    
+		<symbol id="screen-course-details" width="100%" class="gui">
+      <use id="scrollview" href="#scrollview" y="0">        
+
+        <use href="#scrollview-header" fill="black" class="scrollview-header">
+          <rect fill="inherit" x="0" y="0" width="100%" height="100%"/>
+          <use id="txtBack" href="#mixed-text-center-top" height="100%" fill="fb-magenta">
+            <set href="#header" attributeName="pointer-events" to="all"/>
+            <set href="#header/text" attributeName="text-buffer" to="Back to Hole"/>
+            <set href="#header/text" attributeName="font-weight" to="bold"/>
+            <set href="#copy/text" attributeName="text-buffer" to=""/>
+          </use>
+        </use>
+
+         <use id="txtCourseName" href="#course-attribute">
+           <set href="#header" attributeName="text-buffer" to="Course Name"/>
+         </use>
+
+         <use id="txtParkName" href="#course-attribute">
+           <set href="#header" attributeName="text-buffer" to="Park"/>
+         </use>
+
+         <use id="txtTerrain" href="#course-attribute">
+           <set href="#header" attributeName="text-buffer" to="Terrain"/>
+         </use>
+
+         <use id="txtUnits" href="#course-attribute">
+           <set href="#header" attributeName="text-buffer" to="Units"/>
+         </use>
+
+         <use id="txtHoleType" href="#course-attribute">
+           <set href="#header" attributeName="text-buffer" to="Hole Type"/>
+         </use>
+
+        <use id="txtDescription" href="#scrollview-item" width="100%">
+          <text id="header" x="3" y="37" width="100%" font-weight="bold" fill="fb-green" font-size="30">Description</text>
+          <textarea id="copy" x="15" y="42" width="100%-11" text-length="512" font-size="25" fill="fb-white" height="300">Copy</textarea>
+        </use>
+        
+      </use>
+      
+    </symbol>
+  </defs>
+</svg>

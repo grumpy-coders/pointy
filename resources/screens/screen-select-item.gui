@@ -1,0 +1,44 @@
+<svg> 
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="import" href="/mnt/sysassets/widgets/square_button_widget.gui" />
+  <link rel="import" href="../widgets/selectable-item.gui" />
+
+  <defs>
+
+    <symbol id="screen-select-item" class="gui" display="none">
+      <use href="#scrollview">
+          
+        <use href="#scrollview-header" fill="black" class="scrollview-header">
+          <rect fill="inherit" x="0" y="0" width="100%" height="100%"/>
+          <use id="txtSelect" href="#mixed-text-center-top" height="100%" fill="fb-magenta" font-weight="bold">
+            <set href="#header" attributeName="pointer-events" to="all"/>
+            <set href="#header/text" attributeName="text-buffer" to="Select"/>
+            <set href="#copy/text" attributeName="text-buffer" to=""/>
+          </use>            
+        </use>
+      </use>
+      
+      <use id="sv0" href="#scrollview-item" display="none" class="selectable-item">
+        <use id="item0" href="#selectable-item"/>
+      </use>
+
+      <use id="sv1" href="#scrollview-item" display="none" class="selectable-item">
+        <use id="item1" href="#selectable-item"/>
+      </use>
+      
+      <use id="sv2" href="#scrollview-item" display="none" class="selectable-item">
+        <use id="item2" href="#selectable-item"/>
+      </use>
+      
+      <use id="sv3" href="#scrollview-item" display="none" class="selectable-item">
+        <use id="item3" href="#selectable-item"/>
+      </use>
+      
+      <use id="sv4" href="#scrollview-item" display="none" class="selectable-item">
+        <use id="item4" href="#selectable-item"/>
+      </use>
+            
+    </symbol>
+    
+  </defs>
+</svg>

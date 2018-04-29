@@ -1,0 +1,65 @@
+<svg>
+  
+  <link rel="stylesheet" href="styles.css" /> 
+  <link rel="import" href="/mnt/sysassets/widgets/baseview_widget.gui" />
+  <link rel="import" href="/mnt/sysassets/widgets/tile_list_widget.gui" />
+  <link rel="import" href="/mnt/sysassets/widgets/checkbox_tile_widget.gui" />
+  
+   <link rel="stylesheet" href="/mnt/sysassets/widgets/dynamic_textarea.css"/>
+   <link rel="import" href="/mnt/sysassets/widgets/dynamic_textarea.gui"/>
+   <link rel="import" href="/mnt/sysassets/widgets/mixed_text_widget.gui"/>
+  
+  <defs>
+  
+  <symbol id='cb-tile' href='#tile-list-item' class="checkbox-tile">
+    <use id="checkbox" href='#checkbox-tile' />
+  </symbol>
+ 
+  <symbol id="screen-select-players" class="gui" height="100%" y="0">
+              
+    <use id="tile-list" href="#tile-list">
+      <!-- specify how many pixels of the content are taken by separators -->
+      <var id="separator-height-bottom" value="1"/>
+      <!-- disable tile list reordering -->
+      <var id="reorder-enabled" value="0"/>
+    
+      <use id="chk0" href="#cb-tile">
+        <set href="checkbox/header/text" attributeName="text-buffer" to="Player 1" />
+      </use>
+
+      <use id="chk1" href="#cb-tile">
+        <set href="checkbox/header/text" attributeName="text-buffer" to="Player 2" />
+      </use>
+
+      <use id="chk2" href="#cb-tile">
+        <set href="checkbox/header/text" attributeName="text-buffer" to="Player 3" />
+      </use>
+
+      <use id="chk3" href="#cb-tile">
+        <set href="checkbox/header/text" attributeName="text-buffer" to="Player 4" />
+      </use>
+      
+      <use id="chk4" href="#cb-tile">
+        <set href="checkbox/header/text" attributeName="text-buffer" to="Player 5" />
+      </use>
+      
+      <use id="chk5" href="#cb-tile">
+        <set href="checkbox/header/text" attributeName="text-buffer" to="Player 6" />
+      </use>
+      
+      <use id="chk6" href="#cb-tile">
+        <set href="checkbox/header/text" attributeName="text-buffer" to="Player 7" />
+      </use>
+            
+       <use id="btnDone" href="#tile-list-footer" display="inline" fill="fb-green" height="50">
+<!--           <set href="text" attributeName="text-buffer" to="Done" /> -->
+<!--           <set href="text" attributeName="pointer-events" to="all" />
+          <set href="text" attributeName="fill" to="pink" /> -->
+      </use>
+                      
+    </use>
+  </symbol>
+    
+  </defs>
+  
+</svg>

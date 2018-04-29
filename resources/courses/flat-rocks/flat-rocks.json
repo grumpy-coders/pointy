@@ -1,0 +1,139 @@
+{
+	"courseID": 1,
+	"courseName": "Flatrocks (B)",
+	"parkName": "Keller-Kirn Nature Preserve",
+	"terrain": "Very Hilly & Moderately Wooded",
+	"distanceUnits": "Feet",
+	"holeType": "Chainstar",
+	"description": "Sits up on a hill in a wooded and open area on the edge of Lancaster, Ohio. Gently rolling hills with a balanced mix of wooded/open and left/right curving holes.",
+	"address": "Stringtown Rd NE",
+	"city": "Lancaster",
+	"zip": "43130",
+	"holes": [{
+		"id": 1,
+		"par": 3,
+		"stdistance": 242,
+		"ltdistance": 292,
+    "image": "./resources/courses/flat-rocks/flat-rocks-01.png"
+	},
+	{
+		"id": 2,
+		"par": 3,
+		"stdistance": 255,
+		"ltdistance": 340,
+    "image": "./resources/courses/flat-rocks/flat-rocks-02.png"
+	},
+	{
+		"id": 3,
+		"par": 4,
+		"stdistance": 277,
+		"ltdistance": 280,
+    "image": "./resources/courses/flat-rocks/flat-rocks-03.png"
+	},
+	{
+		"id": 4,
+		"par": 4,
+		"stdistance": 240,
+		"ltdistance": 295,
+    "image": "./resources/courses/flat-rocks/flat-rocks-04.png"
+    
+	},
+	{
+		"id": 5,
+		"par": 3,
+		"stdistance": 184,
+		"ltdistance": 309,
+    "image": "./resources/courses/flat-rocks/flat-rocks-05.png"
+	},
+	{
+		"id": 6,
+		"par": 4,
+		"stdistance": 310,
+		"ltdistance": 401,
+    "image": "./resources/courses/flat-rocks/flat-rocks-06.png"
+	},
+	{
+		"id": 7,
+		"par": 3,
+		"stdistance": 240,
+		"ltdistance": 318,
+    "image": "./resources/courses/flat-rocks/flat-rocks-07.png"
+	},
+	{
+		"id": 8,
+		"par": 3,
+		"stdistance": 220,
+		"ltdistance": 263,
+    "image": "./resources/courses/flat-rocks/flat-rocks-08.png"
+	},
+	{
+		"id": 9,
+		"par": 4,
+		"stdistance": 358,
+		"ltdistance": 435,
+    "image": "./resources/courses/flat-rocks/flat-rocks-09.png"
+	},
+	{
+		"id": 10,
+		"par": 3,
+		"stdistance": 264,
+		"ltdistance": 384,
+    "image": "./resources/courses/flat-rocks/flat-rocks-10.png"
+	},
+	{
+		"id": 11,
+		"par": 5,
+		"stdistance": 385,
+		"ltdistance": 446,
+    "image": "./resources/courses/flat-rocks/flat-rocks-11.png"
+	},
+	{
+		"id": 12,
+		"par": 4,
+		"stdistance": 333,
+		"ltdistance": 410,
+    "image": "./resources/courses/flat-rocks/flat-rocks-12.png"
+	},
+	{
+		"id": 13,
+		"par": 4,
+		"stdistance": 227,
+		"ltdistance": 344,
+    "image": "./resources/courses/flat-rocks/flat-rocks-13.png"
+	},
+	{
+		"id": 14,
+		"par": 5,
+		"stdistance": 263,
+		"ltdistance": 339,
+    "image": "./resources/courses/flat-rocks/flat-rocks-14.png"
+	},
+	{
+		"id": 15,
+		"par": 4,
+		"stdistance": 226,
+		"ltdistance": 332,
+    "image": "./resources/courses/flat-rocks/flat-rocks-15.png"
+	},
+	{
+		"id": 16,
+		"par": 3,
+		"stdistance": 250,
+		"ltdistance": 569,
+    "image": "./resources/courses/flat-rocks/flat-rocks-16.png"
+	},
+	{
+		"id": 17,
+		"par": 3,
+		"stdistance": 240,
+		"ltdistance": 406,
+    "image": "./resources/courses/flat-rocks/flat-rocks-17.png"
+	},
+	{
+		"id": 18,
+		"par": 3,
+		"stdistance": 300,
+		"ltdistance": 340,
+    "image": "./resources/courses/flat-rocks/flat-rocks-18.png"
+	}]
+}

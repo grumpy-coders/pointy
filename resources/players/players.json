@@ -1,0 +1,31 @@
+[{
+	"playerID": 1,
+	"firstName": "Tom",
+  "lastName": "Rooker",
+  "displayName": "Tom",
+	"avatar": "./resources/courses/flat-rocks/flat-rocks.json"
+}, {
+	"playerID": 2,
+	"firstName": "Wade",
+  "lastName": "Rooker",
+  "displayName": "Wade",
+	"avatar": "./resources/courses/eagles-nest/eagles-nest.json"
+}, {
+	"playerID": 3,
+	"firstName": "Ben",
+  "lastName": "Wilson",
+  "displayName": "Ben-jammin",
+	"avatar": "./resources/courses/eagles-nest/eagles-nest.json"
+}, {
+	"playerID": 4,
+	"firstName": "May",
+  "lastName": "Sprint",
+  "displayName": "May",
+	"avatar": "./resources/courses/eagles-nest/eagles-nest.json"
+}, {
+	"playerID": 5,
+	"firstName": "Bart",
+  "lastName": "Simpson",
+  "displayName": "Bart-Man",
+	"avatar": "./resources/courses/eagles-nest/eagles-nest.json"
+}]

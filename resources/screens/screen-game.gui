@@ -1,0 +1,57 @@
+<svg>
+  <link rel="stylesheet" href="styles.css" /> 
+  <link rel="import" href="../widgets/player.gui" />
+  <link rel="import" href="/mnt/sysassets/widgets/combo_button_widget.gui" />
+  <link rel="import" href="/mnt/sysassets/widgets/baseview_widget.gui" />
+  <link rel="import" href="/mnt/sysassets/widgets/scrollview_widget.gui" />
+  <link rel="stylesheet" href="/mnt/sysassets/widgets/dynamic_textarea.css"/>
+  <link rel="import" href="/mnt/sysassets/widgets/dynamic_textarea.gui"/>
+  <link rel="import" href="/mnt/sysassets/widgets/mixed_text_widget.gui"/>
+  
+  <defs>
+    
+    <symbol id="view-header" href="#scrollview-header">
+      <rect fill="inherit" x="0" y="0" width="100%" height="100%"/>
+      <text id="text" x="5" y="50%+10" fill="black" font-size="30" font-weight="bold" />
+    </symbol>
+    
+    <symbol id="screen-game" class="gui" width="100%" display="none">
+           
+      <use id="scrollview" href="#scrollview">
+        
+         <use id="svh0" href="#scrollview-header" fill="black" class="scrollview-header">
+          <rect fill="inherit" x="0" y="0" width="100%" height="100%"/>
+          <use id="txtHole" href="#mixed-text-center-top" height="100%" fill="fb-white" font-weight="bold">
+            <set href="#header" attributeName="pointer-events" to="all"/>
+            <set href="#header/text" attributeName="text-buffer" to="Hole 10 | P 4"/>
+            <set href="#copy/text" attributeName="text-buffer" to=""/>
+          </use>
+           
+          <image id="btnPreviousHole" pointer-events="all" x="0" y="3" height="100%" width="56" href="graphics\previous-hole.png" load="sync" />
+          <image id="btnNextHole" x="100%-57" pointer-events="all" y="3" height="100%" width="56" href="graphics\next-hole.png" load="sync" />           
+        </use>
+        
+        <use id="sv0" href="#scrollview-item" display="none" class="scrollview-player">
+           <use id="gamePlayer0" href="#player" fill="#BD4EFC"/>
+        </use>
+        <use id="sv1" href="#scrollview-item" display="none" class="scrollview-player">
+          <use id="gamePlayer1" href="#player" fill="#FFA500"/>
+        </use>
+        <use id="sv2" href="#scrollview-item" display="none" class="scrollview-player">
+          <use id="gamePlayer2" href="#player" fill="#E4FA3C"/>
+        </use>
+        <use id="sv3" href="#scrollview-item" display="none" class="scrollview-player">
+          <use id="gamePlayer3" href="#player" fill="#00A629"/>
+        </use>
+        <use id="sv4" href="#scrollview-item" display="none" class="scrollview-player">
+          <use id="gamePlayer4" href="#player" fill="#00FFFF"/>
+        </use>  
+        <use id="sv5" href="#scrollview-item" display="none" class="scrollview-player">
+          <use id="gamePlayer5" href="#player" fill="#FFFFFF"/>
+        </use>  
+      </use>
+      
+    </symbol>
+    
+  </defs>
+</svg>      

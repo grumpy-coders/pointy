@@ -1,0 +1,39 @@
+<svg>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="import" href="/mnt/sysassets/widgets/scrollview_widget.gui" />
+  <defs>
+    
+   <symbol id="hole-info" width="100%">
+     <text id="txtPar" x="10" y="22" fill="white" text-length="20">Par</text>
+     <text id="txtDistance" x="10" y="$" fill="white" text-length="20">Distance</text>
+     <text id="txtLgDistance" x="10" y="$" fill="white" text-length="20">Long Distance</text>
+   </symbol>
+        
+   <symbol id="screen-hole-details" class="gui" width="100%" display="none">     
+    
+     <use id="scrollview" href="#scrollview"> 
+      
+      <use id="svh0" href="#scrollview-header" fill="black" class="scrollview-header">
+        <rect fill="inherit" x="0" y="0" width="100%" height="100%"/>
+         <use id="txtHole" href="#mixed-text-center-top" height="100%" fill="fb-white" font-weight="bold">
+            <set href="#header/text" attributeName="text-buffer" to="Hole X"/>
+            <set href="#copy/text" attributeName="text-buffer" to=""/>
+          </use>
+        <image id="btnBack" pointer-events="all" x="0" y="3" height="100%" width="56" href="graphics\back.png" load="sync" />
+        <image id="btnCourseDetails" x="100%-57" pointer-events="all" y="3" height="100%" width="56" href="graphics\course.png" load="sync" />
+      </use>  
+
+      <use href="#scrollview-item" height="100">
+        <use href="#hole-info" />
+      </use>
+
+     <use href="#scrollview-item" height="320">
+      <image id="imgHole" x="5" width="100%-10" href="./resources/courses/flat-rocks/flat-rocks-02.png" load="sync"/>      
+     </use>
+     
+    </use>
+           
+   </symbol>
+    
+  </defs>
+</svg>

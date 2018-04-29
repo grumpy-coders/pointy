@@ -1,0 +1,23 @@
+.background {
+  viewport-fill: fb-black;
+}
+
+.scrollview-player {
+  height: 115;
+}
+
+.scrollview-header {
+  fill: fb-magenta;
+  font-weight: bold;
+  height: 35;
+}
+
+.scrollview-item-short {
+  fill: fb-white;
+  height: 30;
+  x: 5;
+}
+
+.checkbox-tile {
+  height: 40;
+}

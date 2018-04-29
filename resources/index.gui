@@ -1,0 +1,17 @@
+<svg class="app">
+  
+  <link rel="import" href="screens/screen-main.gui" />
+  <link rel="import" href="screens/screen-game.gui" />
+  <link rel="import" href="screens/screen-hole-details.gui" />
+  <link rel="import" href="screens/screen-course-details.gui" />
+  <link rel="import" href="screens/screen-select-players.gui" />
+  <link rel="import" href="screens/screen-select-item.gui" />
+  
+  <use id="srnMain" href="#screen-main" display="none" class="screen" display="none"/>
+  <use id="srnGame" href="#screen-game" display="none" class="screen" display="none"/>
+  <use id="srnHoleDetails" href="#screen-hole-details" class="screen" display="none"/>
+  <use id="srnCourseDetails" href="#screen-course-details" class="screen" display="none"/>
+  <use id="srnSelectPlayers" href="#screen-select-players" class="screen" display="none"/>
+  <use id="srnSelectItem" href="#screen-select-item" class="screen" display="none"/>
+        
+</svg>
