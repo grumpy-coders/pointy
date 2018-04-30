@@ -56,28 +56,28 @@ export function screenGameInit(gameState) {
     
     switch(playerState.style.fill) {
       case constants.PURPLE:
-        btnUp.href = "graphics\\up-purple.png";
-        btnDown.href = "graphics\\down-purple.png";
+        btnUp.href = "graphics/up-purple.png";
+        btnDown.href = "graphics/down-purple.png";
         break;
       case constants.ORANGE:
-        btnUp.href = "graphics\\up-orange.png";
-        btnDown.href = "graphics\\down-orange.png";
+        btnUp.href = "graphics/up-orange.png";
+        btnDown.href = "graphics/down-orange.png";
         break;
       case constants.YELLOW:
-        btnUp.href = "graphics\\up-yellow.png";
-        btnDown.href = "graphics\\down-yellow.png";
+        btnUp.href = "graphics/up-yellow.png";
+        btnDown.href = "graphics/down-yellow.png";
         break;
       case constants.GREEN:
-        btnUp.href = "graphics\\up-green.png";
-        btnDown.href = "graphics\\down-green.png";
+        btnUp.href = "graphics/up-green.png";
+        btnDown.href = "graphics/down-green.png";
         break;
       case constants.CYAN:
-        btnUp.href = "graphics\\up-cyan.png";
-        btnDown.href = "graphics\\down-cyan.png";
+        btnUp.href = "graphics/up-cyan.png";
+        btnDown.href = "graphics/down-cyan.png";
         break;
       case constants.WHITE:
-        btnUp.href = "graphics\\up-white.png";
-        btnDown.href = "graphics\\down-white.png";
+        btnUp.href = "graphics/up-white.png";
+        btnDown.href = "graphics/down-white.png";
         break;
     }
     

@@ -11,7 +11,7 @@ export function screenSelectPlayersInit(gameState) {
     
   screen.getElementById('btnDone').onclick = function() { console.log('here'); setSelectedPlayers(gameState); }
   
-  screenTools.hideAllClass(screen, 'checkbox-tile');
+  screenTools.hideElements(screen, 'checkbox-tile');
     
   for (let playerIndex = 0;  playerIndex < availablePlayers.length; playerIndex++) {
     let cbTile = screen.getElementById('chk' + playerIndex);

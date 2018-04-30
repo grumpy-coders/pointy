@@ -13,15 +13,10 @@ export class DeviceInfo {
   /**
    * Create a DeviceInfo
   */
-  constructor() {      
-    if (device.modelName === "Versa") {
-      this.screenHeight = 300;
-      this.screenWidth = 300;
-    } else {
-      // Default to the ionic
-      this.screenHeight = 250;
-      this.screenWidth = 348;         
-    }
+  constructor() {
+    if (!device.screen) device.screen = { width: 348, height: 250 };
+    this.screenHeight = device.screen.height;
+    this.screenWidth = device.screen.width;
   }
 
   /**
