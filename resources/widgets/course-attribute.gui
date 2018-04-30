@@ -1,5 +1,4 @@
 <svg>
-	<link rel="stylesheet" href="styles.css" />
   <defs>    
    
     <symbol id="course-attribute" href="#scrollview-item" height="55" width="100%">

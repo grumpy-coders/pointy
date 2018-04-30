@@ -1,6 +1,4 @@
   <svg> 
-    <link rel="stylesheet" href="styles.css" />
-    <link rel="import" href="/mnt/sysassets/widgets/square_button_widget.gui" />
         
     <defs>
       
