@@ -17,7 +17,7 @@ import { selectGame } from './screen-select-item.js'
 
 //var gameState = createGameState(1, 1, [1,2,3,4,5,6]);
 
-var gameState = new GameState(1, 1, [1,2,3,4,5,6]);
+var gameState = new GameState(0, 0, []);
 //console.log(gameState.deviceInfo.toString());
 console.log(gameState.toString());
 
@@ -29,8 +29,6 @@ function screenMainInit() {
   scrMain.getElementById('btnSelectGame').onclick = function() { selectGame(gameState); }    
   scrMain.getElementById('btnPickPlayers').onclick = function() { screenSelectPlayersInit(gameState); }
   scrMain.getElementById('ngBtnStart').onclick = function() { screenGameInit(gameState); }  
-  scrMain.getElementsByClassName("main-button").forEach((element, index) => { element.height = gameState.deviceInfo.screenHeight / 4;}  );
+  scrMain.getElementsByClassName("main-button").forEach((element, index) => { element.height = gameState.deviceInfo.squareButtonIconSize;}  );
   showScreen("srnMain");
 }
-
-

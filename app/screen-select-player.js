@@ -1,28 +1,51 @@
 import document from "document";
 import * as screenTools from "./screenTools.js";
 
+
 /** @function screenSelectPlayersInit
 * Sets up the select players screen.
 * @param {object} gameState Details about the game.
 */
+
+let mystate = {}
+
 export function screenSelectPlayersInit(gameState) {
-  let availablePlayers = gameState.getAvailablePlayers();
-  let screen = document.getElementById('srnSelectPlayers');
-    
-  screen.getElementById('btnDone').onclick = function() { console.log('here'); setSelectedPlayers(gameState); }
+  let screen = document.getElementById('srnSelectPlayers'); 
   
-  screenTools.hideElements(screen, 'checkbox-tile');
+  if (gameState.players.length < 1) {
+    let availablePlayers = gameState.getAvailablePlayers();
     
-  for (let playerIndex = 0;  playerIndex < availablePlayers.length; playerIndex++) {
-    let cbTile = screen.getElementById('chk' + playerIndex);
-    if (cbTile != null) {
-      cbTile.text = availablePlayers[playerIndex].displayName;
-      cbTile.style.display = "inline";  
-      console.log('Setting Up: ' + cbTile.text + " | " + "Display: " + cbTile.style.display + " | Height: " + cbTile.height);
+    screen.getElementById('btnDone').onclick = function() { setSelectedPlayers(gameState); }
+    if (gameState.deviceInfo.modelName == 'Versa') {
+      screen.getElementById('done-tile').height = gameState.deviceInfo.squareButtonIconSize;  
+    } else {
+      screen.getElementById('done-tile').height = gameState.deviceInfo.squareButtonIconSize + 15;  
     }
-  }
-    
-  screen.getElementById('tile-list').value = 0;
+    screenTools.hideElements(screen, 'select-player-tile');
+
+
+    for (let playerIndex = 0;  playerIndex < availablePlayers.length; playerIndex++) {
+      let cbTile = screen.getElementById('chk' + playerIndex);
+      if (cbTile != null) {
+        cbTile.text = availablePlayers[playerIndex].displayName;
+        cbTile.playerID = availablePlayers[playerIndex].playerID;
+        cbTile.style.display = 'inline';
+
+        /*
+        cbTile.firstChild.onclick = (evt) => {
+          console.log('here');
+          console.log(cbTile.firstChild.value);
+          cbTile.fill = cbTile.firstChild.value == 0 ? 'fb-green' : 'fb-white';
+          //cbTile.firstChild.fill = cbTile.fill;
+          console.log(cbTile.fill);
+        }
+        */
+        
+        console.log('Setting Up: ' + cbTile.text + " | " + "Display: " + cbTile.style.display + " | Height: " + cbTile.height);
+      }
+    }
+    screen.getElementById('tile-list').value = 0;
+  }  
   screenTools.showScreen(screen.id);
   
 }
@@ -31,19 +54,31 @@ export function screenSelectPlayersInit(gameState) {
 * Update the gameState with selected players
 * @param {object} gameState Details about the game.
 */
-function setSelectedPlayers(gameState) {
-  console.log('setSelectedPlayers');
-  let screen = document.getElementById('srnSelectPlayers');
-  let checkboxes = screen.getElementsByClassName("cb-tile");
-  let availablePlayers = gameState.getAvailablePlayers();
+function setSelectedPlayers(gameState) {  
+   
+ /*
+    document.getElementById('srnSelectPlayers').getElementsByClassName("select-player-tile").forEach((tile, index) => {
+      console.log(tile.text + ' | value: ' + tile.firstChild.value); 
+    });
+ */
   
-  for (let i = 0;  i < checkboxes.length; i++) {
-    let checkbox = checkboxes[i];
-    if (checkbox.style.display = "inline"){
-        console.log("selected: " + checkbox.text);
+  let selectedPlayers = [];
+  let pi = 0;
+  let tiles = document.getElementById('srnSelectPlayers').getElementsByClassName("select-player-tile");
+  for (let tileIndex = 0;  tileIndex < tiles.length; tileIndex++) {
+    if (tiles[tileIndex].firstChild.value) {
+      selectedPlayers[pi] = tiles[tileIndex].playerID
+      pi++;
     }
-    
   }
-
+  
+  gameState.setPlayers(selectedPlayers);
+  document.getElementById('srnMain').getElementById('btnPickPlayers').text = gameState.getPickPlayersText();
+  screenTools.showScreen('srnMain');
+  
+  // for (let i = 0;  i < selectedPlayers.length; i++) {
+  //  console.log('playerID: ' + selectedPlayers[i]);
+  //}
   
 }
+  

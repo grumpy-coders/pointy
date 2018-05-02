@@ -28,3 +28,13 @@ export function hideElements(screen, className) {
   let elements = screen.getElementsByClassName(className)
   for (let e = 0; e < elements.length; e++ ) { elements[e].style.display = "none"; }
 }
+
+/** @function listProperties
+* Lists all of the properties for a given object.
+*/
+export function listProperties(object) {
+ for(var key in object) {
+    console.log('Key: ' + key)
+    console.log(' Value: ' + object[key]);
+  }   
+}

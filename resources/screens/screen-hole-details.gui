@@ -14,10 +14,9 @@
       <use id="svh0" href="#scrollview-header" fill="black" class="scrollview-header">
         <rect fill="inherit" x="0" y="0" width="100%" height="100%"/>
          <use id="txtHole" href="#mixed-text-center-top" height="100%" fill="fb-white" font-weight="bold">
-            <set href="#header/text" attributeName="text-buffer" to="Hole X"/>
+            <set href="#header/text" attributeName="text-buffer" to="Hole XX"/>
             <set href="#copy/text" attributeName="text-buffer" to=""/>
           </use>
-        <image id="btnBack" pointer-events="all" x="0" y="3" height="100%" width="56" href="graphics\back.png" load="sync" />
         <image id="btnCourseDetails" x="100%-57" pointer-events="all" y="3" height="100%" width="56" href="graphics\course.png" load="sync" />
       </use>  
 

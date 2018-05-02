@@ -1,9 +1,13 @@
 [{
-	"courseID": 1,
-	"courseName": "Flat Rockers",
-	"path": "./resources/courses/flat-rocks/flat-rocks.json"
+	"id": 1,
+	"Name": "Flat Rocks (A)",
+	"path": "./resources/courses/flat-rocks/flat-rocks-a.json"
 }, {
-	"courseID": 2,
-	"courseName": "Eagle's Nest",
+	"id": 2,
+	"Name": "Flat Rocks (B)",
+	"path": "./resources/courses/flat-rocks/flat-rocks-b.json"
+}, {
+	"id": 3,
+	"Name": "Eagle's Nest",
 	"path": "./resources/courses/eagles-nest/eagles-nest.json"
 }]

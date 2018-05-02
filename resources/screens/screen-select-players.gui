@@ -3,8 +3,9 @@
 
   <defs>
   
-  <symbol id='cb-tile' href='#tile-list-item' class="checkbox-tile">
-    <use id="checkbox" href='#checkbox-tile' />
+  <symbol id='cb-tile' href='#tile-list-item' class="select-player-tile">
+    <use id="checkbox" href='#checkbox-tile' fill="inherit"/>
+    <var id='playerID' value='0' />
   </symbol>
  
   <symbol id="screen-select-players" class="gui" height="100%" y="0">
@@ -43,10 +44,12 @@
         <set href="checkbox/header/text" attributeName="text-buffer" to="Player 7" />
       </use>
             
-       <use id="btnDone" href="#tile-list-footer" display="inline" fill="fb-green" height="50">
-<!--           <set href="text" attributeName="text-buffer" to="Done" /> -->
-<!--           <set href="text" attributeName="pointer-events" to="all" />
-          <set href="text" attributeName="fill" to="pink" /> -->
+       <use id="done-tile" href="#tile-list-footer" display="inline">
+         <use id="btnDone" href="#square-button-icon" fill="fb-green">
+          <set href="#text"  attributeName="text-buffer" to="Continue" />
+          <set href="#text" attributeName="fill" to="fb-green" />
+          <set href="#image" attributeName="href" to="graphics/user-green.png" />
+        </use>
       </use>
                       
     </use>

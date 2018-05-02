@@ -9,26 +9,7 @@ import { screenHoleDetailsInit } from './screen-hole-details.js';
 */
 export function screenGameInit(gameState) {  
   let srnGame = document.getElementById("srnGame");
-      
-  srnGame.getElementById('txtHole').getElementById('header').onclick = function() { 
-    console.log('header.onclick');
-    screenHoleDetailsInit(gameState); 
-  }
-    
-  srnGame.getElementById('btnPreviousHole').onclick = function() { 
-    if (gameState.currentHole == 1) {
-      console.log('Nope not today. There is not hole 0');
-      return;
-    }      
-    gameState.currentHole--; 
-    changeHole(srnGame, gameState); 
-  }
-  
-  srnGame.getElementById('btnNextHole').onclick = function() {
-    gameState.currentHole++;
-    changeHole(srnGame, gameState); 
-  }
-  
+  enableGameEvents(gameState, srnGame);
   
   for(let i = 0; i < gameState.players.length; i++) {
     let player = gameState.players[i];
@@ -36,7 +17,7 @@ export function screenGameInit(gameState) {
     srnGame.getElementById("sv" + i).style.display = "inline";
     let playerState = srnGame.getElementById("gamePlayer" + i);
     
-    playerState.getElementById("playerIndex").text = i;
+    playerState.getElementById("playerIndex").value = i;
     playerState.getElementById('bottomLine').style.fill = playerState.style.fill;
     playerState.getElementById('totalScore').style.fill = playerState.style.fill;        
     playerState.style.display = "inline";
@@ -50,7 +31,7 @@ export function screenGameInit(gameState) {
     score.style.fill = playerState.style.fill;
     
     // Hack...cough...hack (Should be drawing a polygon)
-    console.log(player.firstName + " color: " + playerState.style.fill);
+    // console.log(player.firstName + " color: " + playerState.style.fill);
     let btnUp = playerState.getElementById('btnUp');
     let btnDown = playerState.getElementById('btnDown');
     
@@ -91,6 +72,59 @@ export function screenGameInit(gameState) {
   screenTools.showScreen(srnGame.id);  
 }
 
+/** @function enableGameEvents
+* Sets up the evnets for the game screen.
+* @param {object} gameState Details about the game.
+* @param {object} srnGame Reference to the game screen.
+*/
+export function enableGameEvents(gameState, srnGame) {
+  
+  if (!srnGame) {
+    srnGame = document.getElementById("srnGame");
+  }
+  
+  srnGame.getElementById('txtHole').getElementById('header').onclick = function() { 
+    console.log('header.onclick');
+    screenHoleDetailsInit(gameState.currentHole, gameState); 
+  }
+
+  srnGame.getElementById('btnPreviousHole').onclick = function() { 
+    if (gameState.currentHole == 1) {
+      console.log('Nope not today. There is not hole 0');
+      return;
+    }      
+    gameState.currentHole--; 
+    changeHole(srnGame, gameState); 
+  }
+
+  srnGame.getElementById('btnNextHole').onclick = function() {
+    gameState.currentHole++;
+    changeHole(srnGame, gameState); 
+  }
+
+  document.onkeypress = function(e) {
+    e.preventDefault();
+    switch (e.key) {
+      case "up": 
+        if (gameState.currentHole != 18) {
+          gameState.currentHole++; 
+          changeHole(srnGame, gameState);
+        }
+        break;
+      case "down":
+        if (gameState.currentHole != 1) {
+          gameState.currentHole--; 
+          changeHole(srnGame, gameState);
+        }
+        break;
+      case "back":
+        // TODO: Ask to start a new game
+        console.log('TODO: Ask to start a new game');
+    }
+  }
+  
+}
+
 /** @function changeScore
 * Changes the score of a player.
 * @param {object} gameState Current state of the game.
@@ -101,7 +135,7 @@ function changeScore(gameState, playerState, changeAmount) {
   let score = playerState.getElementById('score');
   score.text = Number(score.text) + changeAmount  
   let holeIndex = gameState.currentHole -1;
-  let player = gameState.players[playerState.getElementById('playerIndex').text];
+  let player = gameState.players[playerState.getElementById('playerIndex').value];
   player.holes[holeIndex] = score.text;
   score.style.fill = (score.text > gameState.course.holes[holeIndex].par) ? constants.RED_HEX : playerState.style.fill;
   updateTotalScore(gameState, player, playerState);

@@ -9,10 +9,8 @@ import { showScreen } from "./screenTools.js";
 export function screenCourseDetailsInit(gameState) {
   console.log("screenCourseDetailsInit");
   let courseDetailsScreen = document.getElementById("srnCourseDetails");
-  
-  
-  courseDetailsScreen.getElementById('txtBack').getElementById('header').onclick = function() { showScreen("srnHoleDetails"); }
     
+  courseDetailsScreen.getElementById('txtBack').getElementById('header').onclick = function() { showScreen("srnHoleDetails"); }    
   courseDetailsScreen.getElementById("txtCourseName").getElementById('copy').text = gameState.course.courseName;
   courseDetailsScreen.getElementById("txtParkName").getElementById('copy').text = gameState.course.parkName;
   courseDetailsScreen.getElementById("txtTerrain").getElementById('copy').text = gameState.course.terrain;

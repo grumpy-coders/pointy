@@ -1,14 +1,8 @@
 <svg>
-
   <defs>
     
-    <symbol id="selectable-item" width="100%" class="selectable-item">
-      <use id="name" href="#mixed-text-left-mid" width="100%" fill="fb-white">
-        <set href="#header" attributeName="pointer-events" to="all"/>
-        <set href="#header/text" attributeName="text-buffer" to="Item 1"/>
-        <set href="#copy/text" attributeName="text-buffer" to=""/>
-      </use>
-      <var id="itemId" value="-1"/>
+    <symbol id='selectable-item' href='#tile-list-item' class="select-player-tile" display="none" height="50">
+      <text id="label" x="10" width="100%" fill="fb-white" text-length="20" font-size="30" pointer-events="all">Item 1</text>
     </symbol>
     
   </defs>

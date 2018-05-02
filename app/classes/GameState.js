@@ -34,23 +34,52 @@ export class GameState {
    * @return {null} Returns void.
   */
   setCourse(courseID) {
-    let courses = fs.readFileSync('./resources/courses/courses.json', 'json');
-    let courseData = null;
-
+    if (courseID < 1) {
+      this.course = null;
+      return;
+    }
+    
+    let courses = fs.readFileSync(this.getCoursesPath(), 'json');
     for (let i = 0; i < courses.length; i++) {
-      if (courseID == courses[i].courseID) {
+      if (courseID == courses[i].id) {
         this.course = fs.readFileSync(courses[i].path, 'json');
         break;
       }
     }
+    
   }
+
+  /**
+   * Gets the path to course json file.
+   * @return {string} Returns path to courses.json.
+  */
+  getCoursesPath() { return './resources/courses/courses.json'; }
+
+  /**
+   * Gets the path to course json file.
+   * @return {string} Returns path to courses.json.
+  */
+  getGamesPath() { return './resources/games/games.json'; }
 
   /**
    * Sets the current game.
    * @return {null} Returns void.
   */
   setGame(gameID) {
-     this.game = { gameID: 1, name: "Disc Golf" }
+    if (gameID < 1) {
+       this.game = { id: -1, name: ""};
+    }
+    
+    let games = fs.readFileSync(this.getGamesPath(), 'json');
+    for (let i = 0; i < games.length; i++) {
+      if (gameID == games[i].id) {
+        // At some point add support for more games.
+        // this.game = fs.readFileSync(courses[i].path, 'json');
+        this.game = games[i];
+        break;
+      }
+    }
+    
   }
 
   /**
@@ -61,13 +90,8 @@ export class GameState {
     if (playerIDs == null || typeof playerIDs == 'undefined' || playerIDs.length < 1) {
       this.players = null;
     }
-    let player0 = { playerID: 1, firstName: "Tom" };
-    let player1 = { playerID: 2, firstName: "Wade" };
-    let player2 = { playerID: 3, firstName: "Ben" };
-    let player3 = { playerID: 4, firstName: "Jack" };
-    let player4 = { playerID: 5, firstName: "Sam" };
-    let player5 = { playerID: 6, firstName: "Bill" };
-    let allPlayers = [player0, player1, player2, player3, player4, player5];             
+    
+    let allPlayers = this.getAvailablePlayers();
     let selectedPlayers = new Array(playerIDs.length);
 
     for (let pi = 0; pi < playerIDs.length; pi++) {                
@@ -83,13 +107,24 @@ export class GameState {
       }
     }           
     this.players = selectedPlayers;
-
   }
   
   /**
    * Gets a string version of the object.
    * @return {string} String version of the object.
   */
-  toString() { return 'game: ' + this.game.name + '(' +  this.game.gameID + ') | ' + 'players: ' + this.players.length; }
+  getPickPlayersText() {
+    if (this.players.length == 0) {
+      return "Pick Players";
+    } else {
+      return this.players.length + ( this.players.length == 1 ? " Player": " Players" );
+    }
+  }
+
+  /**
+   * Gets a string version of the object.
+   * @return {string} String version of the object.
+  */
+  toString() { return 'game: ' + this.game.name + '(' +  this.game.id + ') | ' + 'players: ' + this.players.length; }
     
 }
