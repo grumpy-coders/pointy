@@ -34,7 +34,11 @@ export function hideElements(screen, className) {
 */
 export function listProperties(object) {
  for(var key in object) {
-    console.log('Key: ' + key)
-    console.log(' Value: ' + object[key]);
+   try{
+     console.log('Key: ' + key + ' | value: ' + object[key]);
+   } catch (error) {
+    // Some values throw an error when trying to access them.
+    console.log('Key: ' + key + ' | Error: ' + error.message);
+   }
   }   
 }
