@@ -7,28 +7,35 @@
      <text id="txtLgDistance" x="10" y="$" fill="white" text-length="20">Long Distance</text>
    </symbol>
         
-   <symbol id="screen-hole-details" class="gui" width="100%" display="none">     
-    
+   <symbol id="screen-hole-details" class="gui" width="100%" display="none" layer="1">     
+           
      <use id="scrollview" href="#scrollview"> 
       
-      <use id="svh0" href="#scrollview-header" fill="black" class="scrollview-header">
-        <rect fill="inherit" x="0" y="0" width="100%" height="100%"/>
-         <use id="txtHole" href="#mixed-text-center-top" height="100%" fill="fb-white" font-weight="bold">
-            <set href="#header/text" attributeName="text-buffer" to="Hole XX"/>
-            <set href="#copy/text" attributeName="text-buffer" to=""/>
-          </use>
-        <image id="btnCourseDetails" x="100%-57" pointer-events="all" y="3" height="100%" width="56" href="graphics\course.png" load="sync" />
-      </use>  
+        <use id="svh0" href="#scrollview-header" fill="black" class="scrollview-header">
+          <rect fill="inherit" x="0" y="0" width="78%" height="100%"/>
+           <use id="txtHole" href="#mixed-text-center-top" height="100%" fill="fb-white" font-weight="bold">
+              <set href="#header/text" attributeName="text-buffer" to="Hole XX"/>
+              <set href="#copy/text" attributeName="text-buffer" to=""/>
+            </use>
+        <!--         <image id="btnCourseDetails" x="100%-57" pointer-events="all" y="3" height="100%" width="56" href="graphics\course.png" load="sync" /> -->
+        </use>  
 
-      <use href="#scrollview-item" height="100">
-        <use href="#hole-info" />
-      </use>
+        <use href="#scrollview-item" height="100">
+          <use href="#hole-info" />
+        </use>
 
-     <use href="#scrollview-item" height="320">
-      <image id="imgHole" x="5" width="100%-10" href="./resources/courses/flat-rocks/flat-rocks-02.png" load="sync"/>      
-     </use>
+       <use href="#scrollview-item" height="320">
+        <image id="imgHole" x="5" width="100%-10" href="./resources/courses/flat-rocks/flat-rocks-02.png" load="sync"/>      
+       </use>
      
-    </use>
+      </use>
+     
+      <use id="btnCourseDetails" href="#combo-button-upper-right" fill="fb-green" layer="0">
+        <set href="combo-button-icon" attributeName="href" to="graphics\course.png"/>
+        <set href="combo-button-icon-press" attributeName="href" to="graphics\course.png"/>
+        <set href="combo-button-stroke" attributeName="display" to="inline"/>
+      </use> 
+
            
    </symbol>
     

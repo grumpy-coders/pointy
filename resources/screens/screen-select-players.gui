@@ -1,11 +1,12 @@
 <svg>
   
-
   <defs>
   
   <symbol id='cb-tile' href='#tile-list-item' class="select-player-tile">
-    <use id="checkbox" href='#checkbox-tile' fill="inherit"/>
-    <var id='playerID' value='0' />
+    <use id="checkbox" href='#checkbox-tile' fill="fb-yellow">
+      <set href="header/text" attributeName="fill" to="fb-yellow" />
+      <var id='playerID' value='0' />
+    </use>
   </symbol>
  
   <symbol id="screen-select-players" class="gui" height="100%" y="0">

@@ -3,7 +3,7 @@
 }
 
 .scrollview-player {
-  height: 115;
+  height: 100;
 }
 
 .scrollview-header {
@@ -22,3 +22,10 @@
   height: 40;
 }
 
+.checkbox-unselected-color image { 
+  fill: fb-yellow; 
+}
+
+.flag { 
+ { fill: fb-red; opacity: 1; }
+}

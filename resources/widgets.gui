@@ -1,5 +1,9 @@
 <svg>
   <defs>
+    <!-- 
+      The order of the imports is critical. If the order is wrong you will get
+      An Error 22 with all kinds of messages. 
+    -->
     <link rel="stylesheet" href="styles.css" />
 
     <link rel="import" href="/mnt/sysassets/widgets_common.gui" />

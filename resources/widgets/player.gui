@@ -3,21 +3,20 @@
   <defs>
     <symbol id="player" width="100%" class="player">
       
-      <use id="name" href="#mixed-text-left-mid" width="100%" fill="fb-white">
-<!--         <set href="#header" attributeName="pointer-events" to="all"/> -->
-        <set href="#header/text" attributeName="text-buffer" to="Player 1"/>
-        <set href="#copy/text" attributeName="text-buffer" to=""/>
+      <use id="btnDown" href="#square-button" x="1" y="5" width="22%" height="80">
+        <set href="#text" attributeName="text-buffer" to="-" />
+      </use>
+            
+      <text id="name" x="93" y="55" width="90" font-size="37" font-weight="bold">Player 1</text>    
+      <text id="score" x="187" y="55" width="60" font-size="37" font-weight="bold">000</text>
+                              
+      <use id="btnUp" href="#square-button" x="100%-75" y="5" width="22%" height="80">
+        <set href="#text" attributeName="text-buffer" to="+" />       
       </use>
       
-      <use id="score" href="#mixed-text-center-mid" width="100%" fill="fb-white">
-        <set href="#header/text" attributeName="text-buffer" to="0"/>
-        <set href="#copy/text" attributeName="text-buffer" to=""/>
-      </use>
+      <text id="totalScore" x="50%-52" y="$+5" width="100%" font-weight="bold" font-size="25">Total: 000</text>
       
-      <text id="totalScore" x="10" y="95" width="100%" fill="fb-white" font-size="20">Total: 000</text>      
-      <image id="btnUp" pointer-events="all" x="100%-59" y="3" height="53" width="56" href="graphics\up-purple.png" load="sync" />
-      <image id="btnDown" pointer-events="all" x="100%-59" y="58" height="53" width="56" href="graphics\down-purple.png" load="sync" />
-      <line id="bottomLine" x1="0" y1="$+3" x2="120%" y2="$+3" fill="red" stroke-width="1" /> 
+      <line id="bottomLine" x1="0" y1="$-20" x2="101%" y2="$-20" stroke-width="1" /> 
       <var id="playerIndex" value="-1"/>
       
     </symbol>

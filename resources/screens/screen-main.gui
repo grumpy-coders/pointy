@@ -1,7 +1,7 @@
   <svg> 
         
     <defs>
-      
+                    
     <symbol id="screen-main" class="gui" display="none" height="100%">
        
        <use id="btnSelectGame" href="#square-button-icon" fill="fb-blue" class="main-button" y="0">
@@ -22,7 +22,7 @@
          <set href="#image" attributeName="href" to="graphics/pick-players.png" />
        </use>      
       
-       <use id="ngBtnStart" href="#square-button-icon" fill="fb-green" class="main-button" y="$">
+       <use id="btnStart" href="#square-button-icon" fill="fb-green" class="main-button" y="$">
          <set href="#text"  attributeName="text-buffer" to="Start" />
          <set href="#text" attributeName="fill" to="fb-green" />
          <set href="#image" attributeName="href" to="graphics/green-light.png" />

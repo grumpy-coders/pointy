@@ -8,7 +8,7 @@
               
     <use id="tile-list" href="#tile-list">
       <!-- specify how many pixels of the content are taken by separators -->
-      <var id="separator-height-bottom" value="1"/>
+      <var id="separator-height-bottom" value="2"/>
       <!-- disable tile list reordering -->
       <var id="reorder-enabled" value="0"/>
     

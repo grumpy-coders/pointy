@@ -46,6 +46,7 @@ export class GameState {
         break;
       }
     }
+    this.addPlayerHoles();
     
   }
 
@@ -99,9 +100,11 @@ export class GameState {
         if (allPlayers[playerIndex].playerID == playerIDs[pi]) {
           selectedPlayers[pi] = allPlayers[playerIndex];
           // Add the holes to the player.  
-          // Will switch to .fill when fitbit sdk supports it.     
-          selectedPlayers[pi].holes =  new Array(this.course.holes.length);
-          for (let h = 0; h < selectedPlayers[pi].holes.length; h++ ) { selectedPlayers[pi].holes[h] = 0; }
+          // Will switch to .fill when fitbit sdk supports it.
+          if (this.course != null && this.course.holes.length > 0) {
+            selectedPlayers[pi].holes =  new Array(this.course.holes.length);
+            for (let h = 0; h < selectedPlayers[pi].holes.length; h++ ) { selectedPlayers[pi].holes[h] = 0; }
+          }
           break;
         }
       }
@@ -109,6 +112,18 @@ export class GameState {
     this.players = selectedPlayers;
   }
   
+  addPlayerHoles() {
+    if (this.players == null || this.players.length < 1 || this.course == null || this.course.holes.length < 1) {
+      return;
+    }
+    
+    for (let pi = 0; pi < this.players.length; pi++) {  
+      this.players[pi].holes =  new Array(this.course.holes.length);
+      for (let h = 0; h < this.players[pi].holes.length; h++ ) { this.players[pi].holes[h] = 0; }
+    }
+    
+  }
+
   /**
    * Gets a string version of the object.
    * @return {string} String version of the object.

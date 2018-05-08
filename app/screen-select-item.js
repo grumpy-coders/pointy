@@ -12,10 +12,12 @@ export function selectCourse(gameState) {
 
       let item = srnSelectItem.getElementById('item' + i);     
       item.style.display = 'inline';
-          
+                
       let label = item.getElementById('label');
       label.text = items[i].Name;
       label.itemID = parseInt(items[i].id);
+      label.style.fill = document.getElementById("srnMain").getElementById('btnSelectCourse').style.fill;
+      label.getElementById('text').style.fill = label.style.fill;
       label.onclick = function(item) {
         document.onkeypress = null;
         gameState.setCourse(label.itemID)
@@ -45,8 +47,10 @@ export function selectGame(gameState) {
       let label = item.getElementById('label');
       label.text = items[i].Name;
       label.itemID = parseInt(items[i].id);
+      label.style.fill = document.getElementById("srnMain").getElementById('btnSelectGame').style.fill;
+      label.getElementById('text').style.fill = label.style.fill;
       label.onclick = function(item) {
-        document.onkeypress = null;
+        unbindEvents(srnSelectItem);        
         gameState.setGame(label.itemID)
         document.getElementById("srnMain").getElementById('btnSelectGame').text = formatText(label.text);
         screenTools.showScreen('srnMain');
@@ -68,16 +72,21 @@ function formatText(string) {
 * Hides all of the selectable items
 * @return Returns a reference to the select-item screen.
 */
-function setupSelectItem() {  
-  let srnSelectItem = document.getElementById("srnSelectItem");    
-   srnSelectItem.getElementsByClassName('selectable-item').forEach(function(item) { 
-   if (typeof item.style != 'undefined') {
-     item.style.display = "none"; 
-     item.onclick = null;
-   }
-  });
+function setupSelectItem() {
+  let srnSelectItem = document.getElementById("srnSelectItem");
+  let items = srnSelectItem.getElementsByClassName('select-player-tile');
+  for (let i = 0; i < items.length; i++) { items[i].style.display = 'none'; }   
   bindEvents();
   return srnSelectItem;
+}
+
+/** @function bindEvents
+* Removes the event bindings for the screen.
+*/
+function unbindEvents(srnSelectItem) {
+  document.onkeypress = null;
+  let items = srnSelectItem.getElementsByClassName('select-player-tile');
+  for (let i = 0; i < items.length; i++) { items[i].onclick = null; }   
 }
 
 /** @function bindEvents
@@ -85,7 +94,7 @@ function setupSelectItem() {
 */
 function bindEvents() {
   document.onkeypress = function(e) {
-    e.preventDefault();
+     e.preventDefault();
     switch (e.key) {
       case "up": 
         console.log('up');
@@ -93,10 +102,9 @@ function bindEvents() {
       case "down":
         console.log('down');
         break;
-      case "back":
+      case "back":     
         document.onkeypress = null;
         screenTools.showScreen('srnMain');
     }
   }
 }
-

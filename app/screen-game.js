@@ -2,6 +2,8 @@ import document from "document";
 import * as screenTools from "./screenTools.js";
 import * as constants from './constants.js';
 import { screenHoleDetailsInit } from './screen-hole-details.js';
+import { screenMainInit } from './screen-main.js';
+import { GameState } from './classes/GameState.js';
 
 /** @function startGame
 * Starts a new game
@@ -9,13 +11,13 @@ import { screenHoleDetailsInit } from './screen-hole-details.js';
 */
 export function screenGameInit(gameState) {  
   let srnGame = document.getElementById("srnGame");
-  enableGameEvents(gameState, srnGame);
-  
+    
   for(let i = 0; i < gameState.players.length; i++) {
-    let player = gameState.players[i];
+    let player = gameState.players[i];    
         
     srnGame.getElementById("sv" + i).style.display = "inline";
     let playerState = srnGame.getElementById("gamePlayer" + i);
+    
     
     playerState.getElementById("playerIndex").value = i;
     playerState.getElementById('bottomLine').style.fill = playerState.style.fill;
@@ -29,44 +31,20 @@ export function screenGameInit(gameState) {
     let score = playerState.getElementById('score');
     score.text = 0;    
     score.style.fill = playerState.style.fill;
-    
-    // Hack...cough...hack (Should be drawing a polygon)
-    // console.log(player.firstName + " color: " + playerState.style.fill);
-    let btnUp = playerState.getElementById('btnUp');
-    let btnDown = playerState.getElementById('btnDown');
-    
-    switch(playerState.style.fill) {
-      case constants.PURPLE:
-        btnUp.href = "graphics/up-purple.png";
-        btnDown.href = "graphics/down-purple.png";
-        break;
-      case constants.ORANGE:
-        btnUp.href = "graphics/up-orange.png";
-        btnDown.href = "graphics/down-orange.png";
-        break;
-      case constants.YELLOW:
-        btnUp.href = "graphics/up-yellow.png";
-        btnDown.href = "graphics/down-yellow.png";
-        break;
-      case constants.GREEN:
-        btnUp.href = "graphics/up-green.png";
-        btnDown.href = "graphics/down-green.png";
-        break;
-      case constants.CYAN:
-        btnUp.href = "graphics/up-cyan.png";
-        btnDown.href = "graphics/down-cyan.png";
-        break;
-      case constants.WHITE:
-        btnUp.href = "graphics/up-white.png";
-        btnDown.href = "graphics/down-white.png";
-        break;
-    }
-    
+        
+    let btnUp = playerState.getElementById('btnUp');    
+    btnUp.style.fill = playerState.style.fill;
+    btnUp.getElementById('text').style.fill = playerState.style.fill;
     btnUp.onclick =  function() { changeScore(gameState, playerState, 1) };
+    
+    let btnDown = playerState.getElementById('btnDown');
+    btnDown.style.fill = playerState.style.fill;
+    btnDown.getElementById('text').style.fill = playerState.style.fill;       
     btnDown.onclick =  function() { changeScore(gameState, playerState, -1) };   
         
   }
-  changeHole(srnGame, gameState);
+  enableGameEvents(gameState, srnGame);
+  changeHole(srnGame, gameState, 0);
   // This fixes the screen loadding with all the scrollview items overlapping in the frist position.
   srnGame.getElementById("scrollview").value = 0;
   screenTools.showScreen(srnGame.id);  
@@ -78,52 +56,34 @@ export function screenGameInit(gameState) {
 * @param {object} srnGame Reference to the game screen.
 */
 export function enableGameEvents(gameState, srnGame) {
-  
+  console.log('enableGameEvents');
   if (!srnGame) {
     srnGame = document.getElementById("srnGame");
   }
   
-  srnGame.getElementById('txtHole').getElementById('header').onclick = function() { 
-    console.log('header.onclick');
-    screenHoleDetailsInit(gameState.currentHole, gameState); 
-  }
-
-  srnGame.getElementById('btnPreviousHole').onclick = function() { 
-    if (gameState.currentHole == 1) {
-      console.log('Nope not today. There is not hole 0');
-      return;
-    }      
-    gameState.currentHole--; 
-    changeHole(srnGame, gameState); 
-  }
-
-  srnGame.getElementById('btnNextHole').onclick = function() {
-    gameState.currentHole++;
-    changeHole(srnGame, gameState); 
-  }
+  srnGame.getElementById('txtHole').onclick = function() { screenHoleDetailsInit(gameState.currentHole, gameState); }
+  srnGame.getElementById('btnFinish').onclick = function() { endGame(gameState); }
 
   document.onkeypress = function(e) {
-    e.preventDefault();
-    switch (e.key) {
-      case "up": 
-        if (gameState.currentHole != 18) {
-          gameState.currentHole++; 
-          changeHole(srnGame, gameState);
-        }
-        break;
-      case "down":
-        if (gameState.currentHole != 1) {
-          gameState.currentHole--; 
-          changeHole(srnGame, gameState);
-        }
-        break;
-      case "back":
-        // TODO: Ask to start a new game
-        console.log('TODO: Ask to start a new game');
+      e.preventDefault();
+      console.log('hardware button');
+      console.log('e.key: ' + e.key);
+      switch (e.key) {
+        case "up":
+            console.log('hole up');
+            changeHole(srnGame, gameState, 1);          
+          break;
+        case "down":
+            console.log('hole down');
+            changeHole(srnGame, gameState, -1);
+          break;
+        case "back":
+          console.log('back');
+          endGame(gameState);
+      }
     }
-  }
   
-}
+  }
 
 /** @function changeScore
 * Changes the score of a player.
@@ -157,18 +117,24 @@ function updateTotalScore(gameState, player, playerState) {
 
 /** @function changeHole
 * Changes the current hole.
-* @param {srnGame} Game screen
+* @param {object} Game screen
 * @param {object} gameState Current state of the game.
 */
-function changeHole(srnGame, gameState) {
-    
-  if ( gameState.currentHole > gameState.course.holes.lenght) {
-    gameState.currentHole = gameState.course.holes.lenght;
-    conole.log("Game Over");
+function changeHole(srnGame, gameState, modifier) { 
+  let newHole =  gameState.currentHole + modifier;
+
+  if (newHole > gameState.course.holes.length) {
+    console.log("Game Over");
     return;
   }
   
-  srnGame.getElementById("txtHole").getElementById("header").text = "H " + gameState.currentHole + " | P " + gameState.course.holes[gameState.currentHole -1].par;  
+  if (newHole < 1) {
+    console.log('Nope not today. There is not hole 0');
+    return;
+  }
+  
+  gameState.currentHole = newHole;    
+  srnGame.getElementById("txtHole").text = "H" + gameState.currentHole + " | P" + gameState.course.holes[gameState.currentHole -1].par + ' | TP' + getTotalPar(gameState);  
   for (let playerIndex = 0;  playerIndex < gameState.players.length; playerIndex++) {
     let playerState = srnGame.getElementById("gamePlayer" +  playerIndex);
     let player =  gameState.players[playerIndex];
@@ -183,6 +149,45 @@ function changeHole(srnGame, gameState) {
 * Ends a game
 * @param {object} gameInfo Details about the game.
 */
-export function endGame(game) {
-  screenTools.hideElements(document.getElementById("srnGame"), 'scrollview-player'); 
+export function endGame(gameState) {
+  let srnYorN = document.getElementById('srnYorN');
+  srnYorN.getElementById('title').text = 'End Game?';
+  srnYorN.getElementById('btnYes').onclick = function() { 
+    unbindEvents()
+    screenMainInit(new GameState(0, 0, [])); 
+  }
+  srnYorN.getElementById('btnNo').onclick = function() { 
+    srnYorN.getElementById('btnNo').onclick = null;
+    screenTools.showScreen('srnGame'); 
+  }
+  screenTools.showScreen(srnYorN.id);    
+}
+
+/** @function getTotalPar
+* Gets the total par up to the current hole.
+* @param {object} gameState Current state of the game.
+*/
+function getTotalPar(gameState) {
+  let total = 0;  
+  for (let h = 0;  h < gameState.course.holes.length && h < gameState.currentHole; h++) { 
+    total += gameState.course.holes[h].par; 
+  }
+  return total;
+}
+
+/** @function unbindEvents
+* Unbinds all of the events
+*/
+function unbindEvents() {
+  let srnGame = document.getElementById("srnGame");  
+  srnGame.getElementById('txtHole').onclick = null;
+  srnGame.getElementById('btnFinish').onclick = null;
+  document.onkeypress = null;
+  let players = srnGame.getElementsByClassName("player");
+  for (let p = 0;  p < players.length; p++) {
+    let player = players[p];
+    player.getElementById('btnDown').onclick = null;
+    player.getElementById('btnUp').onclick = null;
+    player.style.display = 'none';
+  }
 }
