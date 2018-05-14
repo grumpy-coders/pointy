@@ -1,13 +1,16 @@
 [{
 	"id": 1,
 	"Name": "Flat Rocks (A)",
+  	"enabled": true,
 	"path": "./resources/courses/flat-rocks/flat-rocks-a.json"
 }, {
 	"id": 2,
 	"Name": "Flat Rocks (B)",
+  	"enabled:": true,
 	"path": "./resources/courses/flat-rocks/flat-rocks-b.json"
 }, {
 	"id": 3,
 	"Name": "Eagle's Nest",
+  	"enabled": false,
 	"path": "./resources/courses/eagles-nest/eagles-nest.json"
 }]
