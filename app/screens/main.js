@@ -1,19 +1,45 @@
 import document from 'document';
-import { showScreen } from './screenTools.js';
-import { screenGameInit } from './screen-game.js';
-import { createGameState } from './createGameState.js';
-import { screenSelectPlayersInit } from './screen-select-player.js';
-import { selectCourse } from './screen-select-item.js'
-import { selectGame } from './screen-select-item.js'
-import { me } from "appbit";
-import * as screenTools from './screenTools.js'
+import {
+  screenGameInit
+} from './game.js';
+import {
+  screenSelectPlayersInit
+} from './select-player.js';
+import {
+  selectCourse
+} from './select-item.js'
+import {
+  selectGame
+} from './select-item.js'
+import {
+  me
+} from "appbit";
+import * as st from './screen-tools.js'
+import * as constants from '../constants.js'
+import * as fs from 'fs';
+import {
+  GameState
+} from '../classes/GameState.js'
+import {
+  unbindEvents
+} from './alert.js';
 
 /** @function screenMainInit
-* Sets up the main screen.
-*/
+ * Sets up the main screen.
+ * @param {object} gameState  The current game state.
+ */
 export function screenMainInit(gameState) {
-  
-  document.onkeypress = function(e) {
+
+  if (gameState == null) {
+    console.log('gameState is null');
+    let gameID = getDefaultID(constants.DEFAULT_GAME_FILE_PATH);
+    let courseID = getDefaultID(constants.DEFAULT_GAME_FILE_PATH);
+
+    gameState = new GameState(gameID, courseID, [])
+
+  }
+
+  document.onkeypress = function (e) {
     e.preventDefault();
     switch (e.key) {
       case "up":
@@ -23,39 +49,71 @@ export function screenMainInit(gameState) {
         console.log('main.down');
         break;
       case "back":
+        console.log('main.back');
         let srnYorN = document.getElementById('srnYorN');
         srnYorN.getElementById('title').text = 'Exit?';
-        srnYorN.getElementById('btnYes').onclick = function() { me.exit(); }
-        srnYorN.getElementById('btnNo').onclick = function() { showScreen('srnMain'); }
-        screenTools.showScreen(srnYorN.id);
+        srnYorN.getElementById('btnYes').onclick = function () {
+          me.exit();
+        }
+        srnYorN.getElementById('btnNo').onclick = function () {
+          st.showScreen('srnMain');
+        }
+        st.showScreen(srnYorN.id);
     }
   }
 
-    
   let scrMain = document.getElementById('srnMain');
-  
   let btnSelectGame = scrMain.getElementById('btnSelectGame')
-  btnSelectGame.text = 'Pick Game';
-  btnSelectGame.onclick = function() { selectGame(gameState); }    
-  
+  if (gameState.game == null) {
+    btnSelectGame.text = 'Pick Game';
+  } else {
+    btnSelectGame.text = gameState.game.Name.substring(0, 11).trim();
+  }
+  btnSelectGame.onclick = function () {
+    selectGame(gameState);
+  }
+
   let btnSelectCourse = scrMain.getElementById('btnSelectCourse');
-  btnSelectCourse.text = 'Pick Course';
-  btnSelectCourse.onclick = function() { selectCourse(gameState); }
-  
+  if (gameState.game == null) {
+    btnSelectCourse.text = 'Pick Course';
+  } else {
+    btnSelectCourse.text = gameState.course.courseName.substring(0, 11).trim();
+  }
+  btnSelectCourse.onclick = function () {
+    selectCourse(gameState);
+  }
+
   let btnPickPlayers = scrMain.getElementById('btnPickPlayers');
   btnPickPlayers.text = 'Pick Players';
-  btnPickPlayers.onclick = function() { screenSelectPlayersInit(gameState); }
-  
-  scrMain.getElementById('btnStart').onclick = function() {
+  btnPickPlayers.onclick = function () {
+    screenSelectPlayersInit(gameState);
+  }
+
+  scrMain.getElementById('btnStart').onclick = function () {
     // Unbind the click fixes the "Fitbit OS Simulator" from lossing connection.
     document.onkeypress = null;
     scrMain.getElementById('btnStart').onclick = null;
     btnSelectGame.onclick = null;
     btnSelectCourse.onclick = null;
-    btnPickPlayers.onclick = null;    
-    screenGameInit(gameState); 
-  }  
-  scrMain.getElementsByClassName("main-button").forEach((element, index) => { element.height = gameState.deviceInfo.squareButtonIconSize;}  );  
-  showScreen(scrMain.id);
+    btnPickPlayers.onclick = null;
+    screenGameInit(gameState);
+  }
+  scrMain.getElementsByClassName("main-button").forEach((element, index) => {
+    element.height = gameState.deviceInfo.squareButtonIconSize;
+  });
+  st.showScreen(scrMain.id);
 }
 
+/** @function getDefaultID
+ * Get the ID from the default file.
+ * @param {string} defaultFilePath Path to default file.
+ */
+function getDefaultID(defaultFilePath) {
+  let id;
+  try {
+    id = JSON.parse(fs.readFileSync(defaultFilePath, 'json')).selected;
+  } catch (error) {
+    id = 0;
+  }
+  return id;
+}

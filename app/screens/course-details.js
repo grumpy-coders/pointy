@@ -1,5 +1,5 @@
 import document from "document";
-import { showScreen } from "./screenTools.js";
+import { showScreen } from "./screen-tools.js";
 
 
 /** @function screenCourseDetailsInit
