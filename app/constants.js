@@ -12,3 +12,8 @@ export const RED_HEX = "#F83C40";
 export const WHITE_HEX = "#FFFFFF";
 export const YELLOW_HEX = "#E4FA3C";
 
+export const COURSES_FILE_PATH = './resources/courses/courses.json';
+export const PLAYERS_FILE_PATH = 'players.json';
+
+export const DEFAULT_COURSE_FILE_PATH = "defaultCourse.json";
+export const DEFAULT_GAME_FILE_PATH = "defaultGame.json";

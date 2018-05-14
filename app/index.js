@@ -6,7 +6,14 @@
  * Got the course data for Flatrocks / Eagles Next from https://www.dgcoursereview.com/course.php?id=60
  */
 import document from 'document';
-import { screenMainInit } from './screen-main.js'
-import { GameState } from './classes/GameState.js'
+import {
+	screenMainInit
+} from './screens/main.js'
+import {
+	GameState
+} from './classes/GameState.js'
+import * as sm from './settings-manager.js';
+import * as constants from './constants.js';
 
-screenMainInit(new GameState(0, 0, []));
+sm.setupMessaging();
+screenMainInit(null);
