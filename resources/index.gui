@@ -1,12 +1,13 @@
 <svg class="app">
   
-  <link rel="import" href="screens/screen-main.gui" />
-  <link rel="import" href="screens/screen-game.gui" />
-  <link rel="import" href="screens/screen-hole-details.gui" />
-  <link rel="import" href="screens/screen-course-details.gui" />
-  <link rel="import" href="screens/screen-select-players.gui" />
-  <link rel="import" href="screens/screen-select-item.gui" />
-  <link rel="import" href="screens/screen-yorn.gui" />
+  <link rel="import" href="screens/main.svg" />
+  <link rel="import" href="screens/game.svg" />
+  <link rel="import" href="screens/hole-details.svg" />
+  <link rel="import" href="screens/course-details.svg" />
+  <link rel="import" href="screens/select-players.svg" />
+  <link rel="import" href="screens/select-item.svg" />
+  <link rel="import" href="screens/yorn.svg" />
+  <link rel="import" href="screens/alert.svg" />
   
   <use id="srnMain" href="#screen-main" display="none" class="screen" display="none"/>
   <use id="srnGame" href="#screen-game" display="none" class="screen" display="none"/>
@@ -15,5 +16,6 @@
   <use id="srnSelectPlayers" href="#screen-select-players" class="screen" display="none"/>
   <use id="srnSelectItem" href="#screen-select-item" class="screen" display="none"/>
   <use id="srnYorN" href="#screen-yorn" class="screen" display="none"/>
+  <use id="srnAlert" href="#alert" class="screen" display="none"/>
         
 </svg>
