@@ -1,5 +1,5 @@
 <svg>
-   <link rel="import" href="../widgets/selectable-item.gui" />
+   <link rel="import" href="../widgets/selectable-item.svg" />
 
   <defs>
   

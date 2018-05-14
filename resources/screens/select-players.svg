@@ -2,8 +2,8 @@
   
   <defs>
   
-  <symbol id='cb-tile' href='#tile-list-item' class="select-player-tile">
-    <use id="checkbox" href='#checkbox-tile' fill="fb-yellow">
+  <symbol id='cb-tile' href='#tile-list-item' class="select-player-tile" pointer-events="all">
+    <use id="checkbox" href='#checkbox-tile' fill="fb-yellow" pointer-events="all">
       <set href="header/text" attributeName="fill" to="fb-yellow" />
       <var id='playerID' value='0' />
     </use>
@@ -15,7 +15,7 @@
       <!-- specify how many pixels of the content are taken by separators -->
       <var id="separator-height-bottom" value="1"/>
       <!-- disable tile list reordering -->
-      <var id="reorder-enabled" value="0"/>
+      <var id="reorder-enabled" value="1"/>
     
       <use id="chk0" href="#cb-tile">
         <set href="checkbox/header/text" attributeName="text-buffer" to="Player 1" />
