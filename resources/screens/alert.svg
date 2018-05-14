@@ -1,0 +1,18 @@
+<svg>
+  <defs>
+    
+    <symbol id="alert" x="0" y="0" display="none" width="100%" height="100%">
+    
+      <textarea id="message" y="0" x="5" fill="fb-white" width="100%-2" font-size="40" text-length="200" font-weight="bold" text-anchor="middle">Message</textarea>
+      
+      <use id="btnOk" href="#square-button-icon" fill="fb-blue" class="main-button" y="100%-70">
+       <set href="#text"  attributeName="text-buffer" to="Ok" />
+       <set href="#text" attributeName="fill" to="fb-blue" />
+       <set href="#image" attributeName="href" to="" />
+     </use>
+        
+    </symbol>
+      
+  </defs>
+    
+</svg>

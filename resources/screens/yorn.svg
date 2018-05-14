@@ -1,0 +1,22 @@
+<svg>
+  <defs>
+    
+    <symbol id="screen-yorn" display="none">
+    
+    <text y="110" x="50%" id="title" fill="yellow" font-size="45" font-weight="bold" text-anchor="middle">Yes or No?</text>
+    
+      <svg y="$"> <!-- Put the buttons on the same line -->
+        <use id="btnYes" href="#square-button-toggle" x="50%" fill="fb-green">
+          <set href="#text" attributeName="text-buffer" to="Yes" />
+        </use>
+
+        <use id="btnNo" href="#square-button-toggle" value="1" fill="fb-red">
+          <set href="#text" attributeName="text-buffer" to="No" />
+        </use>
+      </svg>
+        
+    </symbol>
+      
+  </defs>
+    
+</svg>
