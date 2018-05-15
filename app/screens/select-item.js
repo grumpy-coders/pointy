@@ -14,7 +14,7 @@ function setupItem(gameState, methodName, item, element, button) {
 	}
 
 	let label = element.getElementById('label');
-	label.text = item.Name;
+	label.text = item.name;
 	label.itemID = parseInt(item.id);
 	label.style.fill = button.style.fill;
 	label.getElementById('text').style.fill = label.style.fill;
