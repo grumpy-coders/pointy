@@ -67,7 +67,7 @@ export function screenMainInit(gameState) {
   if (gameState.game == null) {
     btnSelectGame.text = 'Pick Game';
   } else {
-    btnSelectGame.text = gameState.game.Name.substring(0, 11).trim();
+    btnSelectGame.text = gameState.game.name.substring(0, 11).trim();
   }
   btnSelectGame.onclick = function () {
     selectGame(gameState);
