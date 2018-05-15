@@ -1,0 +1,125 @@
+{
+	"courseID": 3,
+	"courseName": "Generic Par 3",
+	"shortname": "Par3",
+	"parkName": "Unknown",
+	"terrain": "Unknown",
+	"distanceUnits": "Fathoms",
+	"holeType": "Bottomless",
+	"Designer": "Grumpy Coders",
+	"yearEstablished": 2018,
+	"description": "There be monsters. Beware the deep ones.",
+	"address": "10 Barnes Street",
+	"city": "Providence",
+	"state": "Rhode Island",
+	"zip": "02906",
+	"holes": [{
+		"id": 1,
+		"par": 3,
+		"stdistance": 33,
+		"ltdistance": 33,
+		"image": "./resources/courses/generic-par-3/cthulhu.png"
+	},{
+		"id": 2,
+		"par": 3,
+		"stdistance": 33,
+		"ltdistance": 33,
+		"image": "./resources/courses/generic-par-3/cthulhu.png"
+	},{
+		"id": 3,
+		"par": 3,
+		"stdistance": 33,
+		"ltdistance": 33,
+		"image": "./resources/courses/generic-par-3/cthulhu.png"
+	},{
+		"id": 4,
+		"par": 3,
+		"stdistance": 33,
+		"ltdistance": 33,
+		"image": "./resources/courses/generic-par-3/cthulhu.png"    
+	},{
+		"id": 5,
+		"par": 3,
+		"stdistance": 33,
+		"ltdistance": 33,
+		"image": "./resources/courses/generic-par-3/cthulhu.png"
+	},{
+		"id": 6,
+		"par": 3,
+		"stdistance": 33,
+		"ltdistance": 33,
+		"image": "./resources/courses/generic-par-3/cthulhu.png"
+	},{
+		"id": 7,
+		"par": 3,
+		"stdistance": 33,
+		"ltdistance": 33,
+		"image": "./resources/courses/generic-par-3/cthulhu.png"
+	},{
+		"id": 8,
+		"par": 3,
+		"stdistance": 33,
+		"ltdistance": 33,
+		"image": "./resources/courses/generic-par-3/cthulhu.png"
+	},{
+		"id": 9,
+		"par": 3,
+		"stdistance": 33,
+		"ltdistance": 33,
+		"image": "./resources/courses/generic-par-3/cthulhu.png"
+	},{
+		"id": 10,
+		"par": 3,
+		"stdistance": 33,
+		"ltdistance": 33,
+		"image": "./resources/courses/generic-par-3/cthulhu.png"
+	},{
+		"id": 11,
+		"par": 3,
+		"stdistance": 33,
+		"ltdistance": 33,
+		"image": "./resources/courses/generic-par-3/cthulhu.png"
+	},{
+		"id": 12,
+		"par": 3,
+		"stdistance": 33,
+		"ltdistance": 33,
+		"image": "./resources/courses/generic-par-3/cthulhu.png"
+	},{
+		"id": 13,
+		"par": 3,
+		"stdistance": 33,
+		"ltdistance": 33,
+		"image": "./resources/courses/generic-par-3/cthulhu.png"
+	}, {
+		"id": 14,
+		"par": 3,
+		"stdistance": 33,
+		"ltdistance": 33,
+		"image": "./resources/courses/generic-par-3/cthulhu.png"
+	}, {
+		"id": 15,
+		"par": 3,
+		"stdistance": 33,
+		"ltdistance": 33,
+		"image": "./resources/courses/generic-par-3/cthulhu.png"
+	}, {
+		"id": 16,
+		"par": 3,
+		"stdistance": 33,
+		"ltdistance": 33,
+		"image": "./resources/courses/generic-par-3/cthulhu.png"
+	}, {
+		"id": 17,
+		"par": 3,
+		"stdistance": 33,
+		"ltdistance": 33,
+		"image": "./resources/courses/generic-par-3/cthulhu.png"
+	}, {
+		"id": 18,
+		"par": 3,
+		"stdistance": 33,
+		"ltdistance": 33,
+		"image": "./resources/courses/generic-par-3/cthulhu.png"
+	}]
+}
