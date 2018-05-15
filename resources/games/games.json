@@ -1,7 +1,11 @@
 [{
 	"id": 1,
-	"Name": "Disc Golf"
+	"name": "Disc Golf",
+	"shortname": "Disc Golf",
+	"typeID": 1
 }, {
 	"id": 2,
-	"Name": "Golf"
+	"name": "Golf",
+	"shortname": "Golf",
+	"typeID": 2
 }]
