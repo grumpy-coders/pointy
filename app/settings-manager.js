@@ -45,10 +45,7 @@ export function setupMessaging() {
  * @param {string} companionData JSON course data in string format from the companion app.
  */
 function saveDefault(filePath, companionData) {
-	console.log(`saveDefault: ${companionData}`);
 	fs.writeFileSync(filePath, companionData, 'json');
-  let afterSave = JSON.parse(fs.readFileSync(filePath, 'json'));
-  console.log(`values: ${afterSave.selected} | ${afterSave.name}`);
 }
 
 /** @function updatePlayers
