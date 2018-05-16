@@ -47,9 +47,9 @@ To setup default game, course and players use the companion app.
 ###### Notes:
    Game header **H1 | P3 | TP3**
    
-      **H1** = Hole 1
-      **P3** = Par 3
-      **TP3** = Total Par 3
+      H1 = Hole 1
+      P3 = Par 3
+      TP3 = Total Par 3
 
    Pressing on the header on the game ( i.e. H1 | P3 | TP3) will bring up the hole details.
    Pressing on the flag on the hole details brings up the course details.
