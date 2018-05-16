@@ -49,7 +49,6 @@ export class GameState {
 	 * @return {null} Returns void.
 	 */
 	setCourse(courseID) {
-		console.log(`gameState.setCourse: ${courseID}`);
 		if (courseID < 1) {
 			this.course = null;
 			return;
@@ -58,7 +57,7 @@ export class GameState {
 		let courses = fs.readFileSync(this.getCoursesPath(), 'json');
 		for (let i = 0; i < courses.length; i++) {
 			if (courseID == courses[i].id) {
-				console.log('setting course');
+				console.log(`setting course: ${courses[i].path}`);
 				this.course = fs.readFileSync(courses[i].path, 'json');
 				break;
 			}
@@ -87,7 +86,6 @@ export class GameState {
 	 * @return {null} Returns void.
 	 */
 	setGame(gameID) {
-    console.log(`gameState.setGame: ${gameID}`);
 		if (gameID < 1) {
 			this.game = null;
       return;
