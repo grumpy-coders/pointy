@@ -231,7 +231,7 @@ export function endGame(gameState) {
 	}
 	srnYorN.getElementById('btnNo').onclick = function () {
 		srnYorN.getElementById('btnNo').onclick = null;
-		screenTools.showScreen('srnGame');
+		st.showScreen('srnGame');
 	}
 	st.showScreen(srnYorN.id);
 }

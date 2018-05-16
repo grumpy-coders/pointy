@@ -26,12 +26,44 @@ export function screenHoleDetailsInit(holeToShow, gameState) {
         screenHoleDetailsInit(holeToShow - 1, gameState);
         break;
       case "back":
+        unbindEvents();
         srnGame.bindEvents(gameState, null);
         showScreen('srnGame');
     }
   }
 
   let srnHoleDetails = document.getElementById("srnHoleDetails");
+  let scrollview = srnHoleDetails.getElementById("scrollview");
+  
+  scrollview.onmousedown = function (evt) {
+		gameState.lastY = evt.screenY;
+		gameState.lastX = evt.screenX;
+	}
+
+	scrollview.onmouseup = function (evt) {
+		let yMove = evt.screenY - gameState.lastY;
+		let xMove = evt.screenX - gameState.lastX;
+
+		if (yMove < -60) {
+			// console.log('swipe up')  
+		};
+
+		if (yMove > 60) {
+			// console.log('swipe down')
+		};
+
+		if (xMove < -60) {
+			// console.log('swipe left');
+			screenHoleDetailsInit(holeToShow + 1, gameState);
+		};
+
+		if (xMove > 60) {
+			// console.log('swipe right')
+			screenHoleDetailsInit(holeToShow - 1, gameState);
+		};
+
+	}
+  
 
   srnHoleDetails.getElementById('btnCourseDetails').onclick = function () {
     screenCourseDetailsInit(gameState);
@@ -54,4 +86,17 @@ export function screenHoleDetailsInit(holeToShow, gameState) {
 
   srnHoleDetails.getElementById("scrollview").value = 0;
   showScreen(srnHoleDetails.id);
+}
+
+/** @function unbindEvents
+ * Unbinds all of the events
+ * @param {bool} hide Hide the player elements
+ */
+function unbindEvents() {
+  
+  document.onkeypress = null;
+  let srnHoleDetails = document.getElementById("srnHoleDetails");
+  srnHoleDetails.getElementById("scrollview").onmousedown = null;
+  srnHoleDetails.getElementById("scrollview").onmouseup = null;
+  srnHoleDetails.getElementById('btnCourseDetails').onclick = null;
 }

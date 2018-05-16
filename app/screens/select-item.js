@@ -15,12 +15,12 @@ function setupItem(gameState, methodName, item, element, button) {
 
 	let label = element.getElementById('label');
 	label.text = item.name;
+  label.shortname = item.shortname;
 	label.itemID = parseInt(item.id);
 	label.style.fill = button.style.fill;
 	label.getElementById('text').style.fill = label.style.fill;
-	label.onclick = function (item) {
+	label.onclick = function () {
 		document.onkeypress = null;
-		console.log(methodName);
 		switch (methodName) {
 			case 'setCourse':
 				gameState.setCourse(label.itemID);
@@ -29,10 +29,7 @@ function setupItem(gameState, methodName, item, element, button) {
 				gameState.setGame(label.itemID);
 				break;
 		}
-		//eval(methodName)(label.itemID);
-		// tools.listProperties(label);
-		// func(label.itemID)
-		button.text = label.text.substring(0, 11).trim();
+		button.text = label.shortname.substring(0, 11).trim();
 		screenTools.showScreen('srnMain');
 	};
 	element.style.display = 'inline';

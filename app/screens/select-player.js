@@ -60,12 +60,11 @@ function setSelectedPlayers(gameState) {
 	let selectedPlayers = [];
 	let pi = 0;
 	let tiles = document.getElementById('srnSelectPlayers').getElementsByClassName("select-player-tile");
-	for (let tileIndex = 0; tileIndex < tiles.length; tileIndex++) {
+	for (let tileIndex = 0, length = tiles.length; tileIndex < length; tileIndex++) {
 		tiles[tileIndex].firstChild.onclick = null;
 
 		if (tiles[tileIndex].firstChild.value) {
 			selectedPlayers[pi] = tiles[tileIndex].playerID
-			console.log(`selectedPlayers[pi] ${selectedPlayers[pi]}`);
 			pi++;
 		}
 	}

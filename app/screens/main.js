@@ -1,7 +1,7 @@
 import document from 'document';
 import {
   screenGameInit
-} from './game.js';
+} from './game-golf.js';
 import {
   screenSelectPlayersInit
 } from './select-player.js';
@@ -67,7 +67,7 @@ export function screenMainInit(gameState) {
   if (gameState.game == null) {
     btnSelectGame.text = 'Pick Game';
   } else {
-    btnSelectGame.text = gameState.game.name.substring(0, 11).trim();
+    btnSelectGame.text = gameState.game.shortname.substring(0, 11).trim();
   }
   btnSelectGame.onclick = function () {
     selectGame(gameState);
@@ -77,7 +77,7 @@ export function screenMainInit(gameState) {
   if (gameState.game == null) {
     btnSelectCourse.text = 'Pick Course';
   } else {
-    btnSelectCourse.text = gameState.course.courseName.substring(0, 11).trim();
+    btnSelectCourse.text = gameState.course.shortname.substring(0, 11).trim();
   }
   btnSelectCourse.onclick = function () {
     selectCourse(gameState);

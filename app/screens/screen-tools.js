@@ -5,17 +5,14 @@ import document from "document";
  * @param {string} screenName  Name of the screen to show; pass "none" to hide all screens.
  */
 export function showScreen(screenName) {
-
-  document.getElementsByClassName('screen').forEach(function (screen) {
-    if (typeof screen.style != 'undefined') {
-      screen.style.display = "none";
+  let screens = document.getElementsByClassName('screen');
+  for (let s = 0, length = screens.length; s < length; s++) {
+    if (screens[s].id == screenName) {
+      screens[s].style.display = "inline";
+    } else {
+      screens[s].style.display = "none";
     }
-  });
-
-  if (screenName != "none") {
-    document.getElementById(screenName).style.display = "inline";
-  }
-
+  }   
 }
 
 /** @function hideElements
