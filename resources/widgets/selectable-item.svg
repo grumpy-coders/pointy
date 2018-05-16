@@ -1,0 +1,14 @@
+<svg>
+  <defs>
+    
+    <symbol id='selectable-item' href='#tile-list-item' class="select-player-tile" display="none" height="64">      
+      <use id="label" href="#square-button" width="100%" fill="fb-green">
+          <set href="#text" attributeName="text-buffer" to="" />
+          <set href="#text" attributeName="text-length" to="30" />
+      </use>      
+    </symbol>
+    
+  </defs>
+</svg>
+
+

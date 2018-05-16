@@ -1,0 +1,11 @@
+<svg>
+  <defs>    
+   
+    <symbol id="course-attribute" href="#scrollview-item" height="55" width="100%">
+      <text id="header" x="3" width="100%" text-length="20" font-weight="bold" fill="fb-green" font-size="30">Header</text>
+      <textarea id="copy" x="15" y="39" width="100%-11" text-length="512" font-size="25" fill="fb-white">Copy</textarea>
+    </symbol>
+    
+   </defs>
+     
+</svg>
