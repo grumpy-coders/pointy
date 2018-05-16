@@ -1,24 +1,24 @@
 [{
 	"id": 1,
 	"name": "Flat Rocks (A)",
-	"shortname": "FB (A)",
+	"shortname": "F-Rocks (A)",
 	"enabled": true,
 	"typeID": [1],
 	"path": "./resources/courses/flat-rocks/flat-rocks-a.json"
 }, {
 	"id": 2,
 	"name": "Flat Rocks (B)",
-	"shortname": "FB (B)",
+	"shortname": "F-Rocks (B)",
 	"enabled:": true,
 	"typeID": [1],
 	"path": "./resources/courses/flat-rocks/flat-rocks-b.json"
 }, {
 	"id": 3,
 	"name": "Generic Par 3",
-	"shortname": "Par 3",
+	"shortname": "   Par 3",
 	"enabled": true,
 	"typeID": [1, 2],
-	"path": "./resources/courses/eagles-nest/eagles-nest.json"
+	"path": "./resources/courses/generic-par-3/generic-par-3.json"
 }, {
 	"id": 4,
 	"name": "Eagle's Nest",

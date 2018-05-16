@@ -1,6 +1,7 @@
 {
 	"id": 3,
 	"courseName": "Eagle's Nest",
+	"shortname": "Eagle's Nest",    
 	"parkName": "Near Alley Park",
 	"Terrain": "Very Hilly & Moderately Wooded",
 	"distanceUnits": "feet",
@@ -10,6 +11,7 @@
 	"description": "This is a challenging course that was designed with intermediate and up players in mind, Can be very challenging for beginners or children.Currently there are only short tees, but each hole has at least 2 pin locations.This course has only been played full time for about a year and the rough is still very rough, but the fairways are well maintained and offer a fair round to all. ",
 	"address": "2805 Old Logan Rd SE",
 	"city": "Lancaster",
+  "state": "Ohio",
 	"zip": "43130",
 	"holes": [{
 			"id": 1,
@@ -17,8 +19,7 @@
 			"stdistance": 0,
 			"ltdistance": 0,
 			"image": ""
-		},
-		{
+		},{
 			"id": 2,
 			"par": 0,
 			"stdistance": 0,
