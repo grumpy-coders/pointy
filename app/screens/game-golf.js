@@ -261,7 +261,7 @@ export function unbindEvents(hide) {
 
 	document.onkeypress = null;
 	let players = srnGame.getElementsByClassName("player");
-	for (let p = 0, length = players.length; p < players; p++) {
+	for (let p = 0, length = players.length; p < length; p++) {
 		let player = players[p];
 		player.getElementById('btnDown').onclick = null;
 		player.getElementById('btnUp').onclick = null;
