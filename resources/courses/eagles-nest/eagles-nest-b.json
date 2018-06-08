@@ -1,0 +1,142 @@
+{
+	"id": 3,
+	"courseName": "Eagle's Nest (B)",
+	"shortname": "EN (B)",
+	"parkName": "Near Alley Park",
+	"Terrain": "Very Hilly & Moderately Wooded",
+	"distanceUnits": "feet",
+	"holeType": " DISCatcher Pro",
+	"designer": "L.D.G.A. course design committee",
+	"yearEstablished": 2016,
+	"description": "This is a challenging course that was designed with intermediate and up players in mind, Can be very challenging for beginners or children.Currently there are only short tees, but each hole has at least 2 pin locations.This course has only been played full time for about a year and the rough is still very rough, but the fairways are well maintained and offer a fair round to all. ",
+	"address": "2805 Old Logan Rd SE",
+	"city": "Lancaster",
+	"state": "Ohio",
+	"zip": "43130",
+	"holes": [{
+			"id": 1,
+			"par": 4,
+			"stdistance": 320,
+			"ltdistance": 0,
+			"image": ""
+		}, {
+			"id": 2,
+			"par": 4,
+			"stdistance": 208,
+			"ltdistance": 0,
+			"image": ""
+		},
+		{
+			"id": 3,
+			"par": 4,
+			"stdistance": 0,
+			"ltdistance": 0,
+			"image": ""
+		},
+		{
+			"id": 4,
+			"par": 4,
+			"stdistance": 0,
+			"ltdistance": 0,
+			"image": ""
+		},
+		{
+			"id": 5,
+			"par": 4,
+			"stdistance": 0,
+			"ltdistance": 0,
+			"image": ""
+		},
+		{
+			"id": 6,
+			"par": 4,
+			"stdistance": 269,
+			"ltdistance": 0,
+			"image": ""
+		},
+		{
+			"id": 7,
+			"par": 4,
+			"stdistance": 200,
+			"ltdistance": 0,
+			"image": ""
+		},
+		{
+			"id": 8,
+			"par": 4,
+			"stdistance": 308,
+			"ltdistance": 0,
+			"image": ""
+		},
+		{
+			"id": 9,
+			"par": 4,
+			"stdistance": 402,
+			"ltdistance": 0,
+			"image": ""
+		},
+		{
+			"id": 10,
+			"par": 4,
+			"stdistance": 201,
+			"ltdistance": 0,
+			"image": ""
+		},
+		{
+			"id": 11,
+			"par": 4,
+			"stdistance": 280,
+			"ltdistance": 0,
+			"image": ""
+		},
+		{
+			"id": 12,
+			"par": 4,
+			"stdistance": 369,
+			"ltdistance": 0,
+			"image": ""
+		},
+		{
+			"id": 13,
+			"par": 4,
+			"stdistance": 245,
+			"ltdistance": 0,
+			"image": ""
+		},
+		{
+			"id": 14,
+			"par": 4,
+			"stdistance": 190,
+			"ltdistance": 0,
+			"image": ""
+		},
+		{
+			"id": 15,
+			"par": 4,
+			"stdistance": 175,
+			"ltdistance": 0,
+			"image": ""
+		},
+		{
+			"id": 16,
+			"par": 4,
+			"stdistance": 0,
+			"ltdistance": 0,
+			"image": ""
+		},
+		{
+			"id": 17,
+			"par": 4,
+			"stdistance": 0,
+			"ltdistance": 0,
+			"image": ""
+		},
+		{
+			"id": 18,
+			"par": 4,
+			"stdistance": 360,
+			"ltdistance": 0,
+			"image": ""
+		}
+	]
+}
