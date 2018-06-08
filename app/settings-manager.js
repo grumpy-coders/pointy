@@ -12,17 +12,17 @@ export function setupMessaging() {
 
 	messaging.peerSocket.onmessage = function (evt) {
 		console.log(`evt.data.key: ${evt.data.key}`);
-		
-	switch (evt.data.key) {
-		case 'players':
-			updatePlayers(evt.data.newValue);
-			break;
-		case 'defaultCourse':
-			saveDefault(constants.DEFAULT_COURSE_FILE_PATH, evt.data.newValue);
-			break;
-		case 'defaultGame':
-			saveDefault(constants.DEFAULT_GAME_FILE_PATH, evt.data.newValue);
-			break;
+
+		switch (evt.data.key) {
+			case 'players':
+				updatePlayers(evt.data.newValue);
+				break;
+			case 'defaultCourse':
+				saveDefault(constants.DEFAULT_COURSE_FILE_PATH, evt.data.newValue);
+				break;
+			case 'defaultGame':
+				saveDefault(constants.DEFAULT_GAME_FILE_PATH, evt.data.newValue);
+				break;
 		}
 	}
 
@@ -54,7 +54,7 @@ function saveDefault(filePath, companionData) {
  * @param {string} playerData JSON player data in string format from the companion app.
  */
 function updatePlayers(playerData) {
-	console.log(`playerData: ${playerData}`);
+	// console.log(`playerData: ${playerData}`);
 	let newPlayers = JSON.parse(playerData);
 	let currentPlayers;
 
@@ -71,9 +71,9 @@ function updatePlayers(playerData) {
 	let newID = currentPlayers.length;
 	let found = false;
 	// Add new players
-	for (let p = 0; p < newPlayers.length; p++) {
+	for (let p = 0, length = newPlayers.length; p < length; p++) {
 		found = false;
-		for (let c = 0; c < currentPlayers.length; c++) {
+		for (let c = 0, cpLength = currentPlayers.length; c < cpLength; c++) {
 			if (newPlayers[p].name == currentPlayers[c].name) {
 				found = true;
 				break;
@@ -96,12 +96,13 @@ function updatePlayers(playerData) {
 				break;
 			}
 		}
-		if (!found && currentPlayers[c] == 'undefined') {
+
+		if (!found && currentPlayers[c] !== 'undefined') {
+			console.log(`Remove: currentPlayers[c].name`)
 			delete currentPlayers[c];
 		}
 	}
 
 	currentPlayers = currentPlayers.filter(val => val); // Reindex the array		
 	fs.writeFileSync(constants.PLAYERS_FILE_PATH, JSON.stringify(currentPlayers), 'json');
-
 }
