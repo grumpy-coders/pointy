@@ -1,0 +1,143 @@
+{
+	"courseID": 5,
+	"courseName": "Stoney Creek Park",
+	"parkName": "Stoney Creek Park",
+	"terrain": "Mixed - Trees/Open",
+	"distanceUnits": "Feet",
+	"holeType": "DISCatcher",
+	"Designer": "",
+	"yearEstablished": 1000,
+	"description": "Pretty open (and long) front 9 and a wooded back 9. Good variety with some blind tee shots. Three tees per hole. No amenities at this park yet.",
+	"address": "2300 E. Ash St.",
+	"city": "Goldsboro",
+	"state": "NC",
+	"zip": "27530",
+	"holes": [{
+			"id": 1,
+			"par": 3,
+			"stdistance": 264,
+			"ltdistance": 0,
+			"image": "./resources/courses/scp-nc/scp-nc-01.png"
+		},
+		{
+			"id": 2,
+			"par": 3,
+			"stdistance": 245,
+			"ltdistance": 0,
+			"image": "./resources/courses/scp-nc/scp-nc-02.png"
+		},
+		{
+			"id": 3,
+			"par": 4,
+			"stdistance": 216,
+			"ltdistance": 0,
+			"image": "./resources/courses/scp-nc/scp-nc-03.png"
+		},
+		{
+			"id": 4,
+			"par": 4,
+			"stdistance": 386,
+			"ltdistance": 0,
+			"image": "./resources/courses/scp-nc/scp-nc-04.png"
+
+		},
+		{
+			"id": 5,
+			"par": 3,
+			"stdistance": 209,
+			"ltdistance": 0,
+			"image": "./resources/courses/scp-nc/scp-nc-05.png"
+		},
+		{
+			"id": 6,
+			"par": 4,
+			"stdistance": 292,
+			"ltdistance": 0,
+			"image": "./resources/courses/scp-nc/scp-nc-06.png"
+		},
+		{
+			"id": 7,
+			"par": 3,
+			"stdistance": 217,
+			"ltdistance": 0,
+			"image": "./resources/courses/scp-nc/scp-nc-07.png"
+		},
+		{
+			"id": 8,
+			"par": 3,
+			"stdistance": 156,
+			"ltdistance": 0,
+			"image": "./resources/courses/scp-nc/scp-nc-08.png"
+		},
+		{
+			"id": 9,
+			"par": 4,
+			"stdistance": 155,
+			"ltdistance": 0,
+			"image": "./resources/courses/scp-nc/scp-nc-09.png"
+		},
+		{
+			"id": 10,
+			"par": 3,
+			"stdistance": 202,
+			"ltdistance": 0,
+			"image": "./resources/courses/scp-nc/scp-nc-10.png"
+		},
+		{
+			"id": 11,
+			"par": 5,
+			"stdistance": 208,
+			"ltdistance": 0,
+			"image": "./resources/courses/scp-nc/scp-nc-11.png"
+		},
+		{
+			"id": 12,
+			"par": 4,
+			"stdistance": 186,
+			"ltdistance": 0,
+			"image": "./resources/courses/scp-nc/scp-nc-12.png"
+		},
+		{
+			"id": 13,
+			"par": 4,
+			"stdistance": 265,
+			"ltdistance": 0,
+			"image": "./resources/courses/scp-nc/scp-nc-13.png"
+		},
+		{
+			"id": 14,
+			"par": 5,
+			"stdistance": 214,
+			"ltdistance": 0,
+			"image": "./resources/courses/scp-nc/scp-nc-14.png"
+		},
+		{
+			"id": 15,
+			"par": 4,
+			"stdistance": 360,
+			"ltdistance": 0,
+			"image": "./resources/courses/scp-nc/scp-nc-15.png"
+		},
+		{
+			"id": 16,
+			"par": 3,
+			"stdistance": 305,
+			"ltdistance": 0,
+			"image": "./resources/courses/scp-nc/scp-nc-16.png"
+		},
+		{
+			"id": 17,
+			"par": 3,
+			"stdistance": 350,
+			"ltdistance": 0,
+			"image": "./resources/courses/scp-nc/scp-nc-17.png"
+		},
+		{
+			"id": 18,
+			"par": 4,
+			"stdistance": 480,
+			"ltdistance": 0,
+			"image": "./resources/courses/scp-nc/scp-nc-18.png"
+		}
+	]
+}
