@@ -33,7 +33,7 @@ export function screenMainInit(gameState) {
 	if (gameState == null) {
 		console.log('gameState is null');
 		let gameID = getDefaultID(constants.DEFAULT_GAME_FILE_PATH);
-		let courseID = getDefaultID(constants.DEFAULT_GAME_FILE_PATH);
+		let courseID = getDefaultID(constants.DEFAULT_COURSE_FILE_PATH);
 
 		gameState = new GameState(gameID, courseID, [])
 
