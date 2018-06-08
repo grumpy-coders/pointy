@@ -145,10 +145,7 @@ export class GameState {
 		}
 
 		for (let pi = 0; pi < this.players.length; pi++) {
-			this.players[pi].holes = new Int16Array(this.course.holes.length);
-			for (let h = 0; h < this.players[pi].holes.length; h++) {
-				this.players[pi].holes[h] = 0;
-			}
+			this.players[pi].holes = new Int8Array(this.course.holes.length);
 		}
 
 	}
