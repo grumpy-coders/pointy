@@ -11,6 +11,9 @@ import {
 	GameState
 } from '../classes/GameState.js';
 import * as alert from "./alert.js";
+import {
+	screenMainInit
+} from './main.js';
 
 /** @function startGame
  * Starts a new game
@@ -20,21 +23,21 @@ export function screenGameInit(gameState) {
 
 	if (gameState.game == null) {
 		alert.show('You must select a game.', function () {
-			st.showScreen('srnMain');
+			screenMainInit(gameState);
 		});
 		return;
 	}
 
 	if (gameState.course == null) {
 		alert.show('You must select a course.', function () {
-			st.showScreen('srnMain');
+			screenMainInit(gameState);
 		});
 		return;
 	}
 
 	if (gameState.players == null || gameState.players.length < 1) {
 		alert.show('You must select a player.', function () {
-			st.showScreen('srnMain');
+			screenMainInit(gameState);
 		});
 		return;
 	}
@@ -88,7 +91,7 @@ export function screenGameInit(gameState) {
  * @param {object} srnGame Reference to the game screen.
  */
 export function bindEvents(gameState, srnGame) {
-	console.log('enableGameEvents');
+
 	if (!srnGame) {
 		srnGame = document.getElementById("srnGame");
 	}
