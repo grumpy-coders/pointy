@@ -19,7 +19,7 @@
         <symbol id="screen-hole-details" width="100%" class="gui" display="none" layer="1">
             <use id="scrollview" href="#scrollview">
                 <use id="svh0" fill="black" class="scrollview-header" href="#scrollview-header">
-                    <rect width="78%" height="100%" x="0" y="0" fill="inherit"/>
+                    <rect width="100%" height="100%" x="0" y="0" fill="inherit"/>
                     <use id="txtHole" height="100%" fill="fb-white" font-weight="bold" href="#mixed-text-center-top">
                         <set attributeName="text-buffer" href="#header/text" to="Hole XX"/>
                         <set attributeName="text-buffer" href="#copy/text" to=""/>
