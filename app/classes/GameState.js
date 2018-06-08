@@ -13,8 +13,8 @@ export class GameState {
 	game = null;
 	players = null;
 	currentHole = 1;
-  lastX = 0;
-  lastY = 0;
+	lastX = 0;
+	lastY = 0;
 
 	/**
 	 * Create a GameState
@@ -53,14 +53,18 @@ export class GameState {
 			this.course = null;
 			return;
 		}
-
+		// console.log(`setCourse Id: ${courseID}`)
 		let courses = fs.readFileSync(this.getCoursesPath(), 'json');
 		for (let i = 0; i < courses.length; i++) {
 			if (courseID == courses[i].id) {
-				console.log(`setting course: ${courses[i].path}`);
+				// console.log(`setting course: ${courses[i].path}`);
 				this.course = fs.readFileSync(courses[i].path, 'json');
 				break;
 			}
+		}
+
+		if (this.course == null) {
+			console.error(`Course: ${courseID} Not Found.`);
 		}
 		this.addPlayerHoles();
 	}
@@ -88,13 +92,12 @@ export class GameState {
 	setGame(gameID) {
 		if (gameID < 1) {
 			this.game = null;
-      return;
+			return;
 		}
 
 		let games = fs.readFileSync(this.getGamesPath(), 'json');
 		for (let i = 0; i < games.length; i++) {
 			if (gameID == games[i].id) {
-        console.log('found game');
 				// At some point add support for more games.
 				// this.game = fs.readFileSync(courses[i].path, 'json');
 				this.game = games[i];
@@ -120,7 +123,7 @@ export class GameState {
 			for (let playerIndex in allPlayers) {
 				if (allPlayers[playerIndex].playerID == playerIDs[pi]) {
 					selectedPlayers[pi] = allPlayers[playerIndex];
-					console.log(`allPlayers[playerIndex]: ${allPlayers[playerIndex].playerID} | ${allPlayers[playerIndex].name}`);
+					// console.log(`allPlayers[playerIndex]: ${allPlayers[playerIndex].playerID} | ${allPlayers[playerIndex].name}`);
 					// Add the holes to the player.  
 					// Will switch to .fill when fitbit sdk supports it.
 					if (this.course != null && this.course.holes.length > 0) {
