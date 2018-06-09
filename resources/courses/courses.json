@@ -15,15 +15,36 @@
 }, {
 	"id": 3,
 	"name": "Generic Par 3",
-	"shortname": "   Par 3",
+	"shortname": "Par 3",
 	"enabled": true,
 	"typeID": [1, 2],
 	"path": "./resources/courses/generic-par-3/generic-par-3.json"
 }, {
 	"id": 4,
-	"name": "Eagle's Nest",
-	"shortname": "Eagle's Nest",
-	"enabled": false,
+	"name": "Eagle's Nest (A)",
+	"shortname": "EN (A)",
+	"enabled": true,
 	"typeID": [1],
-	"path": "./resources/courses/eagles-nest/eagles-nest.json"
+	"path": "./resources/courses/eagles-nest/eagles-nest-a.json"
+}, {
+	"id": 5,
+	"name": "Eagle's Nest (B)",
+	"shortname": "EN (B)",
+	"enabled": true,
+	"typeID": [1],
+	"path": "./resources/courses/eagles-nest/eagles-nest-b.json"
+}, {
+	"id": 6,
+	"name": "Stoney Creek Park (NC)",
+	"shortname": "SCP-NC",
+	"enabled": true,
+	"typeID": [1, 2],
+	"path": "./resources/courses/scp-nc/scp-nc.json"
+}, {
+	"id": 7,
+	"name": "Stoney Creek Park (TX)",
+	"shortname": "SCP-TX",
+	"enabled": true,
+	"typeID": [1, 2],
+	"path": "./resources/courses/scp-tx/scp-tx.json"
 }]
