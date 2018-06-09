@@ -3,22 +3,27 @@ function mySettings(props) {
     <Page>
       <Section
         title={<Text bold align="center">Pointy Settings</Text>}>
-         <Select
+        <Select
           label="Default Game"
           settingsKey="defaultGame"
           options={[
-            {name: "None"},
-            {name: "Disc Golf"},
-            {name: "Golf"}
+            { name: "None" },
+            { name: "Disc Golf" },
+            { name: "Golf" }
           ]}
         />
         <Select
           label="Default Course"
           settingsKey="defaultCourse"
           options={[
-            {name: "None"},
-            {name: "Flat Rocks (A)"},
-            {name: "Flat Rocks (B)"}
+            { name: "None" },
+            { name: "Flat Rocks (A)" },
+            { name: "Flat Rocks (B)" },
+            { name: "Generic Par 3" },
+            { name: "Eagle's Nest (A)" },
+            { name: "Eagle's Nest (B)" },
+            { name: "Stoney Creek Park (NC)" },
+            { name: "Stoney Creek Park (TX)" }
           ]}
         />
 
@@ -31,12 +36,10 @@ function mySettings(props) {
               title="Add a Player"
               label="Player Name"
               placeholder="Player Name"
-              action="Add Player"              
+              action="Add Player"
             />
           }
         />
-        
-        
       </Section>
     </Page>
   );
