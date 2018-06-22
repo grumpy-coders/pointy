@@ -22,6 +22,8 @@ Cthulhu from http://www.softicons.com/object-icons/richs-misc-icons-by-rich-d/ct
  * Flatrocks (A): https://www.dgcoursereview.com/course.php?id=60
  * Flatrocks (B): https://www.dgcoursereview.com/course.php?id=60
  * Eagles Next:  https://www.dgcoursereview.com/course.php?id=8771
+ * Stoney Creek Park: North Carolina: Picture of scorecard.
+ * Stoney Creek Park: Texas: Picture of scorecard.
  
 
 The code contains examples how how to use some the FitBit SDK items.
