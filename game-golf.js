@@ -275,8 +275,8 @@ export function unbindEvents(hide) {
 	srnGame.getElementById('scrollview').onmousedown = null;
 	srnGame.getElementById('scrollview').onmouseup = null;
 /*JP - 7/14/2020: Added for Versa 2 support*/
-  document.getElementById("btnPreviousHole").onclick = null;
-  document.getElementById("btnNextHole").onclick = null;
+  srnGame.getElementById("btnPreviousHole").onclick = null;
+  srnGame.getElementById("btnNextHole").onclick = null;
   
 	document.onkeypress = null;
 	let players = srnGame.getElementsByClassName("player");
