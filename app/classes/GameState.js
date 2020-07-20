@@ -1,7 +1,5 @@
 import * as fs from 'fs';
-import {
-	DeviceInfo
-} from 'DeviceInfo.js';
+import { DeviceInfo } from './DeviceInfo.js';
 import * as constants from '../constants.js';
 
 /** @class GameState
@@ -73,17 +71,13 @@ export class GameState {
 	 * Gets the path to course json file.
 	 * @return {string} Returns path to courses.json.
 	 */
-	getCoursesPath() {
-		return './resources/courses/courses.json';
-	}
+	getCoursesPath() { return './resources/courses/courses.json'; }
 
 	/**
 	 * Gets the path to course json file.
 	 * @return {string} Returns path to courses.json.
 	 */
-	getGamesPath() {
-		return './resources/games/games.json';
-	}
+	getGamesPath() { return './resources/games/games.json'; }
 
 	/**
 	 * Sets the current game.
@@ -123,14 +117,8 @@ export class GameState {
 			for (let playerIndex in allPlayers) {
 				if (allPlayers[playerIndex].playerID == playerIDs[pi]) {
 					selectedPlayers[pi] = allPlayers[playerIndex];
-					// console.log(`allPlayers[playerIndex]: ${allPlayers[playerIndex].playerID} | ${allPlayers[playerIndex].name}`);
-					// Add the holes to the player.  
-					// Will switch to .fill when fitbit sdk supports it.
 					if (this.course != null && this.course.holes.length > 0) {
-						selectedPlayers[pi].holes = new Array(this.course.holes.length);
-						for (let h = 0; h < selectedPlayers[pi].holes.length; h++) {
-							selectedPlayers[pi].holes[h] = 0;
-						}
+						selectedPlayers[pi].holes = new Int8Array(this.course.holes.length);
 					}
 					break;
 				}
@@ -143,11 +131,9 @@ export class GameState {
 		if (this.players == null || this.players.length < 1 || this.course == null || this.course.holes.length < 1) {
 			return;
 		}
-
 		for (let pi = 0; pi < this.players.length; pi++) {
 			this.players[pi].holes = new Int8Array(this.course.holes.length);
 		}
-
 	}
 
 	/**
@@ -166,8 +152,6 @@ export class GameState {
 	 * Gets a string version of the object.
 	 * @return {string} String version of the object.
 	 */
-	toString() {
-		return 'game: ' + this.game.name + '(' + this.game.id + ') | ' + 'players: ' + this.players.length;
-	}
+	toString() { return 'game: ' + this.game.name + '(' + this.game.id + ') | ' + 'players: ' + this.players.length; }
 
 }
