@@ -1,19 +1,12 @@
 import document from "document";
 import * as st from "./screen-tools.js";
 import * as constants from '../constants.js';
-import {
-	screenHoleDetailsInit
-} from './hole-details.js';
-import {
-	screenMainInit
-} from './main.js';
-import {
-	GameState
-} from '../classes/GameState.js';
+import { screenHoleDetailsInit } from './hole-details.js';
+import { screenMainInit } from './main.js';
+import { GameState } from '../classes/GameState.js';
 import * as alert from "./alert.js";
-import {
-	screenMainInit
-} from './main.js';
+import { screenMainInit } from './main.js';
+import { DeviceInfo } from '../classes/DeviceInfo.js'
 
 /** @function startGame
  * Starts a new game
@@ -22,27 +15,36 @@ import {
 export function screenGameInit(gameState) {
 
 	if (gameState.game == null) {
-		alert.show('You must select a game.', function () {
-			screenMainInit(gameState);
-		});
+		alert.show('You must select a game.', function () { screenMainInit(gameState); });
 		return;
 	}
 
 	if (gameState.course == null) {
-		alert.show('You must select a course.', function () {
-			screenMainInit(gameState);
-		});
+		alert.show('You must select a course.', function () { screenMainInit(gameState); });
 		return;
 	}
 
 	if (gameState.players == null || gameState.players.length < 1) {
-		alert.show('You must select a player.', function () {
-			screenMainInit(gameState);
-		});
+		alert.show('You must select a player.', function () { screenMainInit(gameState); });
 		return;
 	}
 
 	let srnGame = document.getElementById("srnGame");
+
+	console.log(`DeviceInfo.modelName ${gameState.deviceInfo.modelName}`);
+	/*JP - 7/14/2020: Added for Versa 2 support*/
+	if (gameState.deviceInfo.modelName == "Versa 2" || gameState.deviceInfo.modelName == "Versa Lite") {
+		console.log("In If");
+		srnGame.getElementById("svh0").height = 100;
+		srnGame.getElementById("btnPreviousHole").style.display = "inline";
+		srnGame.getElementById("btnNextHole").style.display = "inline";
+		srnGame.getElementById("headerLine").y1 = 100;
+		srnGame.getElementById("headerLine").y2 = 100;
+		/*JP - 7/14/2020: Added for Versa 2 support*/
+		// Not going in bind events.  This faster and only binds if the buttons are visible.
+		srnGame.getElementById("btnPreviousHole").onclick = function () { changeHole(srnGame, gameState, -1) };
+		srnGame.getElementById("btnNextHole").onclick = function () { changeHole(srnGame, gameState, 1) };
+	}
 
 	for (let i = 0, length = gameState.players.length; i < length; i++) {
 		let player = gameState.players[i];
@@ -66,18 +68,14 @@ export function screenGameInit(gameState) {
 		let btnUp = playerState.getElementById('btnUp');
 		btnUp.style.fill = playerState.style.fill;
 		btnUp.getElementById('text').style.fill = playerState.style.fill;
-		btnUp.onclick = function () {
-			changeScore(gameState, playerState, 1)
-		};
+		btnUp.onclick = function () { changeScore(gameState, playerState, 1) };
 
 		let btnDown = playerState.getElementById('btnDown');
 		btnDown.style.fill = playerState.style.fill;
 		btnDown.getElementById('text').style.fill = playerState.style.fill;
-		btnDown.onclick = function () {
-			changeScore(gameState, playerState, -1)
-		};
-
+		btnDown.onclick = function () { changeScore(gameState, playerState, -1) };
 	}
+
 	bindEvents(gameState, srnGame);
 	changeHole(srnGame, gameState, 0);
 	// This fixes the screen loadding with all the scrollview items overlapping in the frist position.
@@ -101,11 +99,7 @@ export function bindEvents(gameState, srnGame) {
 		screenHoleDetailsInit(gameState.currentHole, gameState);
 	}
 
-	srnGame.getElementById('btnFinish').onclick = function () {
-		endGame(gameState);
-	}
-	// srnGame.getElementById('btnPreviousHole').onclick = function() { changeHole(srnGame, gameState, -1) }
-	// srnGame.getElementById('btnNextHole').onclick = function() {changeHole(srnGame, gameState, 1);}
+	srnGame.getElementById('btnFinish').onclick = function () { endGame(gameState); }
 
 	document.onkeypress = function (e) {
 		e.preventDefault();
@@ -149,9 +143,7 @@ export function bindEvents(gameState, srnGame) {
 			// console.log('swipe right')
 			changeHole(srnGame, gameState, -1);
 		};
-
 	}
-
 
 }
 
@@ -261,6 +253,8 @@ export function unbindEvents(hide) {
 	srnGame.getElementById('btnFinish').onclick = null;
 	srnGame.getElementById('scrollview').onmousedown = null;
 	srnGame.getElementById('scrollview').onmouseup = null;
+	srnGame.getElementById('btnPreviousHole').onclick = null;
+	srnGame.getElementById('btnNextHole').onclick = null;
 
 	document.onkeypress = null;
 	let players = srnGame.getElementsByClassName("player");
