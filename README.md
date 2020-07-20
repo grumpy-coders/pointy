@@ -1,5 +1,5 @@
 # pointy
-Versa and Ionic golf like game score keeper.
+Versa, Versa 2, Versa Lite, and Ionic golf like game score keeper.
 
 First off I'll give credit to the resources I'm using (as best as I can remember).
 
@@ -45,6 +45,9 @@ To setup default game, course and players use the companion app.
 2. Pick a game
 3. Pick players
 4. Start
+
+## Thanks:
+Thanks to https://github.com/jprokash for the Versa Lite and Versa 2 changes.
 
 ###### Notes:
    Game header **H1 | P3 | TP3**
