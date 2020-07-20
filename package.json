@@ -8,12 +8,18 @@
     "requestedPermissions": [],
     "buildTargets": [
       "higgs",
-      "meson"
+      "meson",
+      "gemini",
+      "mira"
     ],
     "i18n": {
       "en": {
         "name": "Pointy"
       }
-    }
+    },
+    "defaultLanguage": "en-US"
+  },
+  "devDependencies": {
+    "@fitbit/sdk": "~3.1.0"
   }
 }
