@@ -1,28 +1,32 @@
 <svg>
-  <link rel="import" href="../widgets/player.svg" />
-
+  <link rel="import" href="../widgets/player.svg"/>
   <defs>
-    
     <symbol id="view-header" href="#scrollview-header">
       <rect fill="inherit" x="0" y="0" width="100%" height="100%"/>
-      <text id="text" x="5" y="50%+10" fill="black" font-size="30" font-weight="bold" />
+      <text id="text" x="5" y="50%+10" fill="black" font-size="30" font-weight="bold"/>
     </symbol>
-    
     <symbol id="screen-game" class="gui" width="100%" display="none">
-           
       <use id="scrollview" href="#scrollview">
-        
+        <!--JP - 7/14/2020: Added virtual buttons for Versa 2 and Versa Lite Support-->
         <use id="svh0" href="#scrollview-header" fill="black" class="scrollview-header">
           <rect fill="inherit" x="0" y="0" width="100%" height="100%"/>
-          <text id="txtHole" x="50%" fill="fb-white" font-weight="bold" text-anchor="middle" pointer-events="all">Hole 10 | P 4</text>
-<!--           
-          <image id="btnPreviousHole" pointer-events="all" x="0" y="3" height="100%" width="56" href="graphics\previous-hole.png" load="sync" />
-          <image id="btnNextHole" x="100%-57" pointer-events="all" y="3" height="100%" width="56" href="graphics\next-hole.png" load="sync" />           
- -->
+          <text id="txtHole" y="28" x="50%" fill="fb-white" font-weight="bold" text-anchor="middle" pointer-events="all">
+            Hole 1 | P 3
+          </text>
+          <use id="btnPreviousHole" class="dialog-half-button-left" href="#square-button-neutral" y="30" fill="fb-light-gray" display="none">
+            <set href="#text" attributeName="text-buffer" to="Prev."/>
+            <set href="#text" attributeName="text-anchor" to="middle"/>
+            <set href="#text" attributeName="fill" to="fb-light-gray"/>
+          </use>
+          <use id="btnNextHole" class="dialog-half-button-right" href="#square-button" y="30" fill="fb-green" display="none">
+            <set href="#text" attributeName="text-buffer" to="Next"/>
+            <set href="#text" attributeName="text-anchor" to="middle"/>
+            <set href="#text" attributeName="fill" to="fb-green"/>
+          </use>
+          <line id="headerLine" stroke-width="1" fill="fb-white" x1="0%" y1="35" x2="100%" y2="35" stroke-linecap="round"/>
         </use>
-        
         <use id="sv0" href="#scrollview-item" display="none" class="scrollview-player">
-           <use id="gamePlayer0" href="#player" fill="#BD4EFC"/>
+          <use id="gamePlayer0" href="#player" fill="#BD4EFC"/>
         </use>
         <use id="sv1" href="#scrollview-item" display="none" class="scrollview-player">
           <use id="gamePlayer1" href="#player" fill="#FFA500"/>
@@ -35,23 +39,18 @@
         </use>
         <use id="sv4" href="#scrollview-item" display="none" class="scrollview-player">
           <use id="gamePlayer4" href="#player" fill="#00FFFF"/>
-        </use>  
-        
+        </use>
         <use id="sv5" href="#scrollview-item" display="none" class="scrollview-player">
           <use id="gamePlayer5" href="#player" fill="#FFFFFF"/>
         </use>
-        
         <use href="#scrollview-item" display="inline">
-            <use id="btnFinish" href="#square-button-icon" fill="fb-red">
-             <set href="#text" attributeName="text-buffer" to="End Game" />
-             <set href="#text" attributeName="fill" to="fb-red" />
-             <set href="#image" attributeName="href" to="graphics/flag-red.png" />             
-           </use>    
+          <use id="btnFinish" href="#square-button-icon" fill="fb-red">
+            <set href="#text" attributeName="text-buffer" to="End Game"/>
+            <set href="#text" attributeName="fill" to="fb-red"/>
+            <set href="#image" attributeName="href" to="graphics/flag-red.png"/>
+          </use>
         </use>
-        
       </use>
-      
     </symbol>
-    
   </defs>
-</svg>      
+</svg>
